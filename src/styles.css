@@ -1,0 +1,127 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --bg-canvas: #F7F3EB;
+    --bg-studio-warm: #EFE9DC;
+    --bg-card: #FAF7F0;
+    --text-primary: #2C221E;
+    --text-muted: #6B5E57;
+    --accent-emerald: #2D5A43;
+    --accent-terracotta: #C86D51;
+    --accent-ochre: #E09F3E;
+    --accent-cobalt: #2E4D7A;
+    --studio-shadow: 0 14px 34px -10px rgba(44, 34, 30, 0.12), 0 4px 12px -3px rgba(44, 34, 30, 0.06);
+    --frame-shadow: 0 20px 40px -15px rgba(35, 26, 22, 0.22), 0 0 0 1px rgba(44, 34, 30, 0.08);
+  }
+
+  .dark {
+    --bg-canvas: #1A1614;
+    --bg-studio-warm: #241E1B;
+    --bg-card: #221B18;
+    --text-primary: #F5EFEB;
+    --text-muted: #A89B93;
+    --accent-emerald: #4E8A6B;
+    --accent-terracotta: #DF7E63;
+    --accent-ochre: #EDB45D;
+    --accent-cobalt: #4B77B5;
+    --studio-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.5), 0 4px 14px -3px rgba(0, 0, 0, 0.3);
+    --frame-shadow: 0 24px 50px -15px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.09);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', 'DM Sans', -apple-system, sans-serif;
+    color: var(--text-primary);
+    background-color: var(--bg-canvas);
+  }
+
+  body {
+    overflow-x: hidden;
+    min-height: 100vh;
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/* Custom Typography Utility Classes */
+.font-editorial {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+}
+
+.font-display {
+  font-family: 'Playfair Display', 'Bodoni Moda', serif;
+}
+
+.font-sans-human {
+  font-family: 'Plus Jakarta Sans', 'DM Sans', sans-serif;
+}
+
+.font-script {
+  font-family: 'Pinyon Script', cursive;
+}
+
+/* Studio Tactile Frame & Canvas Styling */
+.studio-canvas-card {
+  background-color: var(--bg-card);
+  box-shadow: var(--studio-shadow);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.studio-canvas-card:hover {
+  box-shadow: var(--frame-shadow);
+}
+
+/* Ambient Dappled Sunlight Drift Animation */
+@keyframes sunlightDrift {
+  0% {
+    transform: translate(-5%, -5%) rotate(0deg) scale(1);
+    opacity: 0.42;
+  }
+  50% {
+    transform: translate(6%, 4%) rotate(2deg) scale(1.08);
+    opacity: 0.65;
+  }
+  100% {
+    transform: translate(-5%, -5%) rotate(0deg) scale(1);
+    opacity: 0.42;
+  }
+}
+
+.animate-sunlight-drift {
+  animation: sunlightDrift 24s ease-in-out infinite;
+}
+
+/* Floating dust particles / golden sparks */
+@keyframes gentleFloat {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.02);
+  }
+}
+
+.animate-gentle-float {
+  animation: gentleFloat 6s ease-in-out infinite;
+}
+
+/* Smooth custom scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-canvas);
+}
+::-webkit-scrollbar-thumb {
+  background: #C86D5188;
+  border-radius: 9999px;
+  border: 2px solid var(--bg-canvas);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C86D51cc;
+}
