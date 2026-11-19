@@ -47,7 +47,7 @@ export const archivalPhotos: ArchivalPhoto[] = [
     titleEs: 'Guitarra, canto y risa franca',
     year: 'c. 1990',
     descEn:
-      'Cecilia laughing with her guitar, singing folk ballads and boleros in an intimate gathering. This is the singer Cecilia, that you can hear in the archival audio accompanying this website.',
+      'Cecilia laughing with her guitar, singing folk ballads and boleros in an intimate gathering. This is the singer Cecilia, whom you can hear in the archival audio accompanying this website.',
     descEs:
       'Cecilia riendo a carcajadas con la guitarra, cantando canciones folclóricas y boleros en una tertulia íntima. Esa es la Cecilia cantante, que pueden escucharla en el audio de archivo que acompaña esta web.',
     category: 'music',
