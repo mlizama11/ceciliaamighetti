@@ -168,3 +168,7 @@ Tailwind CSS v4 is integrated through the Vite plugin. `src/styles.css` imports 
 - The email contact link opens the visitor's configured mail application.
 - Social share actions depend on the target platform and browser allowing a share popup or mail link. Some platforms cache Open Graph previews; changes to artwork metadata may not appear immediately after deployment.
 - Google Fonts and social sharing destinations require network access.
+
+## Deployment
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e77a04ee-c40e-42ab-9c58-247d13d22edc/deploy-status)](https://app.netlify.com/projects/ceciliaamighetti/deploys)
