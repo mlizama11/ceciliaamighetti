@@ -56,7 +56,7 @@ export const Navbar: React.FC = () => {
           <SignatureLogo />
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-7">
+          <nav className="hidden min-[1230px]:flex items-center gap-7">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -154,7 +154,7 @@ export const Navbar: React.FC = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-lg text-[#2C221E] dark:text-[#F5EFEB] hover:bg-[#FAF7F0] dark:hover:bg-[#241E1B] transition-colors cursor-pointer"
+              className="min-[1230px]:hidden p-2 rounded-lg text-[#2C221E] dark:text-[#F5EFEB] hover:bg-[#FAF7F0] dark:hover:bg-[#241E1B] transition-colors cursor-pointer"
               aria-label={mobileMenuOpen ? t.nav.close : t.nav.menu}
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

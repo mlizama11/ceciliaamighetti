@@ -26,7 +26,7 @@ export const SignatureLogo: React.FC<SignatureLogoProps> = ({
       aria-label="Cecilia Amighetti — Inicio"
       title="Cecilia Amighetti"
     >
-      <div className="relative shrink-0 py-1 w-28 sm:w-52.5 lg:w-61.25 h-13 sm:h-14.5">
+      <div className="relative shrink-0 py-1 w-40 sm:w-52.5 lg:w-61.25 h-14.5 sm:h-14.5">
         <svg
           viewBox="0 0 340 76"
           className="w-full h-full overflow-visible select-none"
