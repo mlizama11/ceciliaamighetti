@@ -1,13 +1,7 @@
 export type Language = 'en' | 'es';
 
 export type ArtworkSeries =
-  | 'all'
-  | 'amantes'
-  | 'fabulas'
-  | 'gente'
-  | 'retratos'
-  | 'paisajes'
-  | 'bodegones';
+  'all' | 'amantes' | 'fabulas' | 'gente' | 'retratos' | 'paisajes' | 'bodegones';
 
 export interface Artwork {
   id: string;
@@ -21,11 +15,11 @@ export interface Artwork {
   series: ArtworkSeries;
   storyEn: string;
   storyEs: string;
-  signedNote?: string;
   orientation: 'portrait' | 'landscape' | 'square';
   ratio: number;
   isHighlight?: boolean;
-  tags?: string[];
+  tagsEn: string[];
+  tagsEs: string[];
 }
 
 export interface TimelineMilestone {

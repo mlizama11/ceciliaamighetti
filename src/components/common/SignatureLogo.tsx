@@ -22,14 +22,14 @@ export const SignatureLogo: React.FC<SignatureLogoProps> = ({
   return (
     <a
       href="#top"
-      className={`inline-flex items-center group transition-opacity hover:opacity-90 cursor-pointer ${className}`}
+      className={`group inline-flex cursor-pointer items-center transition-opacity hover:opacity-90 ${className}`}
       aria-label="Cecilia Amighetti — Inicio"
       title="Cecilia Amighetti"
     >
-      <div className="relative shrink-0 py-1 w-40 sm:w-52.5 lg:w-61.25 h-14.5 sm:h-14.5">
+      <div className="relative h-14.5 w-40 shrink-0 py-1 sm:h-14.5 sm:w-52.5 lg:w-61.25">
         <svg
           viewBox="0 0 340 76"
-          className="w-full h-full overflow-visible select-none"
+          className="h-full w-full overflow-visible select-none"
           role="img"
           aria-label="Firma de Cecilia Amighetti"
         >
@@ -66,7 +66,7 @@ export const SignatureLogo: React.FC<SignatureLogoProps> = ({
             <text
               x="8"
               y="50"
-              className={`font-script text-[46px] tracking-[0.02em] font-normal fill-current ${
+              className={`font-script fill-current text-[46px] font-normal tracking-[0.02em] ${
                 isLight ? 'text-white' : 'text-[#2C221E] dark:text-[#F5EFEB]'
               }`}
               style={{

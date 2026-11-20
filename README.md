@@ -20,16 +20,16 @@ The site is a client-rendered single-page application. Its content and media are
 
 ## Technology
 
-| Area | Technology |
-| --- | --- |
-| UI | React, TypeScript, Vite |
-| Styling | Tailwind CSS v4, `tw-animate-css`, custom styles in `src/styles.css` |
-| Animation | Motion for React (`motion`) |
-| Icons | Lucide React |
-| Social sharing | `react-share` |
-| Build and type-check | Vite and TypeScript project build (`tsc -b`) |
+| Area                 | Technology                                                           |
+| -------------------- | -------------------------------------------------------------------- |
+| UI                   | React, TypeScript, Vite                                              |
+| Styling              | Tailwind CSS v4, `tw-animate-css`, custom styles in `src/styles.css` |
+| Animation            | Motion for React (`motion`)                                          |
+| Icons                | Lucide React                                                         |
+| Social sharing       | `react-share`                                                        |
+| Build and type-check | Vite and TypeScript project build (`tsc -b`)                         |
 
-Dependency versions are declared in `package.json` and resolved in `package-lock.json`. The project currently has `dev`, `build`, and `preview` scripts; no test or lint script is configured.
+Dependency versions are declared in `package.json` and resolved in `package-lock.json`. The project has `dev`, `build`, `preview`, `format`, and `format:check` scripts; no test or lint script is configured.
 
 ## Getting started
 
@@ -38,6 +38,18 @@ Install dependencies and start the Vite development server:
 ```bash
 npm install
 npm run dev
+```
+
+Format the project and sort Tailwind CSS classes with:
+
+```bash
+npm run format
+```
+
+Check formatting without changing files:
+
+```bash
+npm run format:check
 ```
 
 Set the canonical production origin before building. It must be an absolute origin without a path, for example `https://example.com`:

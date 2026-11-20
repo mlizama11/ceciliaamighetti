@@ -246,8 +246,7 @@ export const archivalPhotos: ArchivalPhoto[] = [
     year: 'c. 1968',
     descEn:
       'Portrait of Cecilia smiling warmly in the soft light of an evening cultural reception.',
-    descEs:
-      'Retrato de Cecilia sonriendo con calidez a la luz suave de una velada cultural.',
+    descEs: 'Retrato de Cecilia sonriendo con calidez a la luz suave de una velada cultural.',
     category: 'social',
     aspectRatio: 733 / 827
   },

@@ -45,27 +45,27 @@ export const Navbar: React.FC = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        className={`fixed top-0 right-0 left-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#F7F3EB]/95 dark:bg-[#1A1614]/95 backdrop-blur-md shadow-sm border-b border-[#2C221E]/8 dark:border-white/10 py-3'
+            ? 'border-b border-[#2C221E]/8 bg-[#F7F3EB]/95 py-3 shadow-sm backdrop-blur-md dark:border-white/10 dark:bg-[#1A1614]/95'
             : 'bg-transparent py-4 sm:py-5'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-3 sm:px-8 flex items-center justify-between">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-3 sm:px-8">
           {/* Brand Signature - Animated ink handwriting */}
           <SignatureLogo />
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden min-[1230px]:flex items-center gap-7">
+          <nav className="hidden items-center gap-7 min-[1230px]:flex">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="font-sans-human text-sm font-medium tracking-wide text-[#2C221E]/80 dark:text-[#F5EFEB]/80 hover:text-[#C86D51] dark:hover:text-[#EDB45D] transition-colors relative py-1 group cursor-pointer text-nowrap mx-0.5"
+                className="font-sans-human group relative mx-0.5 cursor-pointer py-1 text-sm font-medium tracking-wide text-nowrap text-[#2C221E]/80 transition-colors hover:text-[#C86D51] dark:text-[#F5EFEB]/80 dark:hover:text-[#EDB45D]"
               >
                 <span>{link.label}</span>
-                <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#C86D51] dark:bg-[#EDB45D] transition-all duration-300 group-hover:w-full" />
+                <span className="absolute bottom-0 left-0 h-[1.5px] w-0 bg-[#C86D51] transition-all duration-300 group-hover:w-full dark:bg-[#EDB45D]" />
               </a>
             ))}
           </nav>
@@ -75,10 +75,10 @@ export const Navbar: React.FC = () => {
             {/* Audio Toggle Button (By default OFF, plays on click) */}
             <button
               onClick={togglePlay}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-xs font-sans-human font-medium tracking-wide transition-all duration-200 cursor-pointer text-nowrap shadow-xs ${
+              className={`font-sans-human flex cursor-pointer items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium tracking-wide text-nowrap shadow-xs transition-all duration-200 ${
                 isPlaying
-                  ? 'bg-[#C86D51] text-white border-[#C86D51] shadow-md'
-                  : 'bg-[#FAF7F0]/70 dark:bg-[#241E1B]/80 text-[#2C221E] dark:text-[#F5EFEB] border-[#2C221E]/15 dark:border-white/15 hover:border-[#C86D51]'
+                  ? 'border-[#C86D51] bg-[#C86D51] text-white shadow-md'
+                  : 'border-[#2C221E]/15 bg-[#FAF7F0]/70 text-[#2C221E] hover:border-[#C86D51] dark:border-white/15 dark:bg-[#241E1B]/80 dark:text-[#F5EFEB]'
               }`}
               title={
                 isPlaying
@@ -86,43 +86,43 @@ export const Navbar: React.FC = () => {
                     ? 'Pause Cecilia’s singing'
                     : 'Pausar canto de Cecilia'
                   : language === 'en'
-                  ? 'Listen to Cecilia singing (El Colibrí / Rosa de Abril)'
-                  : 'Escuchar a Cecilia cantar (El Colibrí / Rosa de Abril)'
+                    ? 'Listen to Cecilia singing (El Colibrí / Rosa de Abril)'
+                    : 'Escuchar a Cecilia cantar (El Colibrí / Rosa de Abril)'
               }
               aria-label="Reproducir voz de Cecilia Amighetti"
             >
               {isPlaying ? (
-                <div className="flex items-end gap-0.5 h-3">
+                <div className="flex h-3 items-end gap-0.5">
                   {[40, 90, 60].map((h, i) => (
                     <span
                       key={i}
-                      className="w-0.5 bg-white rounded-full animate-pulse"
+                      className="w-0.5 animate-pulse rounded-full bg-white"
                       style={{ height: `${h}%`, animationDelay: `${i * 0.15}s` }}
                     />
                   ))}
                 </div>
               ) : (
-                <Music className="w-3.5 h-3.5 text-[#C86D51]" />
+                <Music className="h-3.5 w-3.5 text-[#C86D51]" />
               )}
-              <span className="hidden sm:inline text-[11px]">
+              <span className="hidden text-[11px] sm:inline">
                 {isPlaying
                   ? language === 'en'
                     ? 'Playing Voice'
                     : 'Sonando'
                   : language === 'en'
-                  ? 'Cecilia Singing'
-                  : 'Canto de Cecilia'}
+                    ? 'Cecilia Singing'
+                    : 'Canto de Cecilia'}
               </span>
             </button>
 
             {/* Seamless Language Switcher with Cross-Fade */}
             <button
               onClick={toggleLanguage}
-              className="relative flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-full border border-[#2C221E]/15 dark:border-white/15 hover:border-[#C86D51] bg-[#FAF7F0]/60 dark:bg-[#241E1B]/80 text-[#2C221E] dark:text-[#F5EFEB] text-xs font-semibold tracking-wider transition-all duration-200 cursor-pointer shadow-xs text-nowrap"
+              className="relative flex cursor-pointer items-center gap-1.5 rounded-full border border-[#2C221E]/15 bg-[#FAF7F0]/60 px-2.5 py-1.5 text-xs font-semibold tracking-wider text-nowrap text-[#2C221E] shadow-xs transition-all duration-200 hover:border-[#C86D51] sm:px-3 dark:border-white/15 dark:bg-[#241E1B]/80 dark:text-[#F5EFEB]"
               aria-label={`Cambiar a ${language === 'en' ? 'Español' : 'English'}`}
             >
-              <Globe className="w-3.5 h-3.5 text-[#C86D51]" />
-              <div className="relative w-7 h-4 overflow-hidden flex items-center justify-center">
+              <Globe className="h-3.5 w-3.5 text-[#C86D51]" />
+              <div className="relative flex h-4 w-7 items-center justify-center overflow-hidden">
                 <AnimatePresence mode="wait" initial={false}>
                   <motion.span
                     key={language}
@@ -136,7 +136,7 @@ export const Navbar: React.FC = () => {
                   </motion.span>
                 </AnimatePresence>
               </div>
-              <span className="hidden sm:inline text-[10px] text-[#6B5E57] dark:text-[#A89B93]">
+              <span className="hidden text-[10px] text-[#6B5E57] sm:inline dark:text-[#A89B93]">
                 / {language === 'en' ? 'ES' : 'EN'}
               </span>
             </button>
@@ -144,20 +144,24 @@ export const Navbar: React.FC = () => {
             {/* Studio Lighting / Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full border border-[#2C221E]/12 dark:border-white/15 bg-[#FAF7F0]/60 dark:bg-[#241E1B]/80 text-[#2C221E] dark:text-[#F5EFEB] hover:text-[#C86D51] dark:hover:text-[#EDB45D] transition-all cursor-pointer shadow-xs"
+              className="cursor-pointer rounded-full border border-[#2C221E]/12 bg-[#FAF7F0]/60 p-2 text-[#2C221E] shadow-xs transition-all hover:text-[#C86D51] dark:border-white/15 dark:bg-[#241E1B]/80 dark:text-[#F5EFEB] dark:hover:text-[#EDB45D]"
               aria-label={isDark ? t.nav.themeLight : t.nav.themeDark}
               title={isDark ? t.nav.themeLight : t.nav.themeDark}
             >
-              {isDark ? <Sun className="w-4 h-4 text-[#EDB45D]" /> : <Moon className="w-4 h-4 text-[#6B5E57]" />}
+              {isDark ? (
+                <Sun className="h-4 w-4 text-[#EDB45D]" />
+              ) : (
+                <Moon className="h-4 w-4 text-[#6B5E57]" />
+              )}
             </button>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="min-[1230px]:hidden p-2 rounded-lg text-[#2C221E] dark:text-[#F5EFEB] hover:bg-[#FAF7F0] dark:hover:bg-[#241E1B] transition-colors cursor-pointer"
+              className="cursor-pointer rounded-lg p-2 text-[#2C221E] transition-colors hover:bg-[#FAF7F0] min-[1230px]:hidden dark:text-[#F5EFEB] dark:hover:bg-[#241E1B]"
               aria-label={mobileMenuOpen ? t.nav.close : t.nav.menu}
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
@@ -171,21 +175,21 @@ export const Navbar: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-50 bg-[#F7F3EB] dark:bg-[#1A1614] flex flex-col justify-between p-8 pt-24 lg:hidden"
+            className="fixed inset-0 z-50 flex flex-col justify-between bg-[#F7F3EB] p-8 pt-24 lg:hidden dark:bg-[#1A1614]"
           >
-            <div className="flex justify-between items-center absolute top-5 left-6 right-6">
+            <div className="absolute top-5 right-6 left-6 flex items-center justify-between">
               <SignatureLogo animated={false} />
               <button
                 onClick={() => setMobileMenuOpen(false)}
-                className="p-2 rounded-full text-[#2C221E] dark:text-[#F5EFEB] border border-[#2C221E]/15 dark:border-white/15 cursor-pointer"
+                className="cursor-pointer rounded-full border border-[#2C221E]/15 p-2 text-[#2C221E] dark:border-white/15 dark:text-[#F5EFEB]"
                 aria-label={t.nav.close}
               >
-                <X className="w-5 h-5" />
+                <X className="h-5 w-5" />
               </button>
             </div>
 
-            <div className="space-y-6 mt-4">
-              <p className="text-xs uppercase tracking-widest text-[#C86D51] font-semibold">
+            <div className="mt-4 space-y-6">
+              <p className="text-xs font-semibold tracking-widest text-[#C86D51] uppercase">
                 {language === 'en' ? 'Site Sections' : 'Secciones del Sitio'}
               </p>
               <nav className="flex flex-col space-y-4">
@@ -194,10 +198,10 @@ export const Navbar: React.FC = () => {
                     key={link.href}
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
-                    className="font-editorial text-2xl text-[#2C221E] dark:text-[#F5EFEB] hover:text-[#C86D51] dark:hover:text-[#EDB45D] transition-colors flex items-center justify-between pb-3 border-b border-[#2C221E]/10 dark:border-white/10"
+                    className="font-editorial flex items-center justify-between border-b border-[#2C221E]/10 pb-3 text-2xl text-[#2C221E] transition-colors hover:text-[#C86D51] dark:border-white/10 dark:text-[#F5EFEB] dark:hover:text-[#EDB45D]"
                   >
                     <span>{link.label}</span>
-                    <span className="text-xs font-sans-human text-[#6B5E57] dark:text-[#A89B93]">
+                    <span className="font-sans-human text-xs text-[#6B5E57] dark:text-[#A89B93]">
                       0{idx + 1}
                     </span>
                   </a>
@@ -211,35 +215,35 @@ export const Navbar: React.FC = () => {
                     togglePlay();
                     setMobileMenuOpen(false);
                   }}
-                  className={`w-full py-3 px-4 rounded-xl flex items-center justify-center gap-2 text-xs font-semibold uppercase tracking-wider transition-colors cursor-pointer ${
+                  className={`flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl px-4 py-3 text-xs font-semibold tracking-wider uppercase transition-colors ${
                     isPlaying
                       ? 'bg-[#C86D51] text-white'
-                      : 'bg-[#EFE9DC] dark:bg-[#241E1B] text-[#2C221E] dark:text-[#F5EFEB]'
+                      : 'bg-[#EFE9DC] text-[#2C221E] dark:bg-[#241E1B] dark:text-[#F5EFEB]'
                   }`}
                 >
-                  <Music className="w-4 h-4" />
+                  <Music className="h-4 w-4" />
                   <span>
                     {isPlaying
                       ? language === 'en'
                         ? 'Pause Cecilia’s Song'
                         : 'Pausar Canto de Cecilia'
                       : language === 'en'
-                      ? 'Play Cecilia’s Song (El Colibrí)'
-                      : 'Escuchar Canto de Cecilia (El Colibrí)'}
+                        ? 'Play Cecilia’s Song (El Colibrí)'
+                        : 'Escuchar Canto de Cecilia (El Colibrí)'}
                   </span>
                 </button>
               </div>
             </div>
 
-            <div className="pt-6 border-t border-[#2C221E]/10 dark:border-white/10 flex items-center justify-between">
+            <div className="flex items-center justify-between border-t border-[#2C221E]/10 pt-6 dark:border-white/10">
               <button
                 onClick={() => {
                   toggleLanguage();
                   setMobileMenuOpen(false);
                 }}
-                className="flex items-center gap-2 text-sm font-medium text-[#C86D51] cursor-pointer"
+                className="flex cursor-pointer items-center gap-2 text-sm font-medium text-[#C86D51]"
               >
-                <Globe className="w-4 h-4" />
+                <Globe className="h-4 w-4" />
                 <span>{language === 'en' ? 'Cambiar a Español' : 'Switch to English'}</span>
               </button>
               <span className="text-xs text-[#6B5E57] dark:text-[#A89B93]">1934—2016</span>

@@ -13,27 +13,30 @@ export const TimelineSection: React.FC<TimelineSectionProps> = ({ onOpenArtworkM
   const { t, language } = useLanguage();
 
   return (
-    <section id="cronologia" className="py-24 sm:py-32 relative overflow-hidden bg-[#FAF7F0] dark:bg-[#1E1815] border-b border-[#2C221E]/10 dark:border-white/10">
-      <div className="max-w-6xl mx-auto px-5 sm:px-8 relative z-10">
+    <section
+      id="cronologia"
+      className="relative overflow-hidden border-b border-[#2C221E]/10 bg-[#FAF7F0] py-24 sm:py-32 dark:border-white/10 dark:bg-[#1E1815]"
+    >
+      <div className="relative z-10 mx-auto max-w-6xl px-5 sm:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#C86D51] font-semibold mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
+        <div className="mx-auto mb-20 max-w-3xl text-center">
+          <div className="mb-3 inline-flex items-center gap-2 text-xs font-semibold tracking-widest text-[#C86D51] uppercase">
+            <Sparkles className="h-3.5 w-3.5" />
             <span>{t.timeline.tag}</span>
           </div>
-          <h2 className="font-editorial text-4xl sm:text-5xl lg:text-6xl text-[#2C221E] dark:text-[#F5EFEB] leading-tight">
+          <h2 className="font-editorial text-4xl leading-tight text-[#2C221E] sm:text-5xl lg:text-6xl dark:text-[#F5EFEB]">
             {t.timeline.title}
           </h2>
-          <p className="font-serif text-base sm:text-lg text-[#6B5E57] dark:text-[#A89B93] mt-4 leading-relaxed">
+          <p className="mt-4 font-serif text-base leading-relaxed text-[#6B5E57] sm:text-lg dark:text-[#A89B93]">
             {t.timeline.subtitle}
           </p>
-          <div className="w-16 h-0.5 bg-[#C86D51] mx-auto mt-6" />
+          <div className="mx-auto mt-6 h-0.5 w-16 bg-[#C86D51]" />
         </div>
 
         {/* Vertical Timeline with Line & Milestones */}
         <div className="relative">
           {/* Animated Central Vertical Guide Line */}
-          <div className="absolute left-4 sm:left-1/2 top-4 bottom-4 w-0.5 -translate-x-1/2 bg-linear-to-b from-[#C86D51] via-[#E09F3E] to-[#2D5A43] opacity-30 dark:opacity-40" />
+          <div className="absolute top-4 bottom-4 left-4 w-0.5 -translate-x-1/2 bg-linear-to-b from-[#C86D51] via-[#E09F3E] to-[#2D5A43] opacity-30 sm:left-1/2 dark:opacity-40" />
 
           <div className="space-y-16 sm:space-y-24">
             {timelineMilestones.map((milestone, idx) => {
@@ -52,20 +55,20 @@ export const TimelineSection: React.FC<TimelineSectionProps> = ({ onOpenArtworkM
               return (
                 <div
                   key={milestone.year + idx}
-                  className={`relative flex flex-col sm:flex-row items-start sm:items-center ${
+                  className={`relative flex flex-col items-start sm:flex-row sm:items-center ${
                     isEven ? 'sm:flex-row-reverse' : ''
                   }`}
                 >
                   {/* Central Node Badge */}
-                  <div className="absolute left-4 sm:left-1/2 -translate-x-1/2 top-0 sm:top-auto z-20 flex items-center justify-center">
+                  <div className="absolute top-0 left-4 z-20 flex -translate-x-1/2 items-center justify-center sm:top-auto sm:left-1/2">
                     <motion.div
                       initial={{ scale: 0.6, opacity: 0 }}
                       whileInView={{ scale: 1, opacity: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5 }}
-                      className="w-10 h-10 rounded-full bg-[#FAF7F0] dark:bg-[#1E1815] border-2 border-[#C86D51] flex items-center justify-center shadow-lg"
+                      className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#C86D51] bg-[#FAF7F0] shadow-lg dark:bg-[#1E1815]"
                     >
-                      <span className="w-3.5 h-3.5 rounded-full bg-[#E09F3E]" />
+                      <span className="h-3.5 w-3.5 rounded-full bg-[#E09F3E]" />
                     </motion.div>
                   </div>
 
@@ -76,64 +79,62 @@ export const TimelineSection: React.FC<TimelineSectionProps> = ({ onOpenArtworkM
                     viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                     className={`ml-12 sm:ml-0 sm:w-1/2 ${
-                      isEven ? 'sm:pl-12 text-left' : 'sm:pr-12 sm:text-right'
+                      isEven ? 'text-left sm:pl-12' : 'sm:pr-12 sm:text-right'
                     }`}
                   >
-                    <div className="p-6 sm:p-8 rounded-2xl bg-[#F7F3EB] dark:bg-[#241E1B] border border-[#2C221E]/10 dark:border-white/10 shadow-md hover:shadow-xl transition-all">
+                    <div className="rounded-2xl border border-[#2C221E]/10 bg-[#F7F3EB] p-6 shadow-md transition-all hover:shadow-xl sm:p-8 dark:border-white/10 dark:bg-[#241E1B]">
                       {/* Year & Period Header */}
                       <div
-                        className={`flex flex-wrap items-center gap-2 mb-3 ${
+                        className={`mb-3 flex flex-wrap items-center gap-2 ${
                           isEven ? 'justify-start' : 'justify-start sm:justify-end'
                         }`}
                       >
-                        <span className="px-3 py-1 rounded-full bg-[#C86D51] text-white font-mono text-xs font-semibold tracking-wider">
+                        <span className="rounded-full bg-[#C86D51] px-3 py-1 font-mono text-xs font-semibold tracking-wider text-white">
                           {milestone.year}
                         </span>
-                        <span className="text-xs uppercase tracking-widest text-[#E09F3E] font-semibold">
+                        <span className="text-xs font-semibold tracking-widest text-[#E09F3E] uppercase">
                           {period}
                         </span>
                       </div>
 
                       {/* Title */}
-                      <h3 className="font-editorial text-2xl sm:text-3xl text-[#2C221E] dark:text-[#F5EFEB] mb-2 leading-tight">
+                      <h3 className="font-editorial mb-2 text-2xl leading-tight text-[#2C221E] sm:text-3xl dark:text-[#F5EFEB]">
                         {title}
                       </h3>
 
                       {/* Location */}
                       <div
-                        className={`flex items-center gap-1.5 text-xs text-[#6B5E57] dark:text-[#A89B93] mb-4 font-sans-human ${
+                        className={`font-sans-human mb-4 flex items-center gap-1.5 text-xs text-[#6B5E57] dark:text-[#A89B93] ${
                           isEven ? 'justify-start' : 'justify-start sm:justify-end'
                         }`}
                       >
-                        <MapPin className="w-3.5 h-3.5 text-[#2D5A43]" />
+                        <MapPin className="h-3.5 w-3.5 text-[#2D5A43]" />
                         <span>{location}</span>
                       </div>
 
                       {/* Description */}
-                      <p className="font-sans-human text-sm sm:text-base leading-relaxed text-[#6B5E57] dark:text-[#A89B93]">
+                      <p className="font-sans-human text-sm leading-relaxed text-[#6B5E57] sm:text-base dark:text-[#A89B93]">
                         {desc}
                       </p>
 
                       {/* Linked Artwork Callout if available */}
                       {linkedArtwork && (
                         <div
-                          onClick={() =>
-                            onOpenArtworkModal && onOpenArtworkModal(linkedArtwork.id)
-                          }
-                          className={`mt-4 pt-3 border-t border-[#2C221E]/10 dark:border-white/10 flex items-center gap-3 cursor-pointer group hover:opacity-90 ${
+                          onClick={() => onOpenArtworkModal && onOpenArtworkModal(linkedArtwork.id)}
+                          className={`group mt-4 flex cursor-pointer items-center gap-3 border-t border-[#2C221E]/10 pt-3 hover:opacity-90 dark:border-white/10 ${
                             isEven ? 'justify-start' : 'justify-start sm:justify-end'
                           }`}
                         >
                           <img
                             src={`/artworks/${linkedArtwork.image}`}
                             alt={language === 'en' ? linkedArtwork.titleEn : linkedArtwork.titleEs}
-                            className="w-12 h-12 object-cover rounded shadow-xs border border-[#2C221E]/10"
+                            className="h-12 w-12 rounded border border-[#2C221E]/10 object-cover shadow-xs"
                           />
                           <div className={isEven ? 'text-left' : 'text-left sm:text-right'}>
-                            <span className="text-[10px] uppercase tracking-wider text-[#C86D51] block font-semibold">
+                            <span className="block text-[10px] font-semibold tracking-wider text-[#C86D51] uppercase">
                               {t.timeline.seriesRefLabel}
                             </span>
-                            <span className="text-xs font-medium text-[#2C221E] dark:text-[#F5EFEB] group-hover:text-[#C86D51] transition-colors">
+                            <span className="text-xs font-medium text-[#2C221E] transition-colors group-hover:text-[#C86D51] dark:text-[#F5EFEB]">
                               {language === 'en' ? linkedArtwork.titleEn : linkedArtwork.titleEs}
                             </span>
                           </div>

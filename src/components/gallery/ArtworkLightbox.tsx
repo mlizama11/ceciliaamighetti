@@ -122,16 +122,14 @@ export const ArtworkLightbox: React.FC<ArtworkLightboxProps> = ({
   const title = language === 'en' ? artwork.titleEn : artwork.titleEs;
   const medium = language === 'en' ? artwork.mediumEn : artwork.mediumEs;
   const story = language === 'en' ? artwork.storyEn : artwork.storyEs;
+  const tags = language === 'en' ? artwork.tagsEn : artwork.tagsEs;
   const shareOrigin = import.meta.env.VITE_SITE_URL || window.location.origin;
-  const shareUrl = new URL(
-    `/share/${encodeURIComponent(artwork.id)}/`,
-    shareOrigin
-  ).href;
+  const shareUrl = new URL(`/share/${encodeURIComponent(artwork.id)}/`, shareOrigin).href;
   const shareTitle = `${title} (${artwork.year}) — Cecilia Amighetti Prieto`;
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 lg:p-8 overflow-hidden bg-[#1A1614]/95 backdrop-blur-xl">
+      <div className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden bg-[#1A1614]/95 p-3 backdrop-blur-xl sm:p-6 lg:p-8">
         {/* Backdrop click to close */}
         <div className="absolute inset-0 -z-10" onClick={onClose} />
 
@@ -141,23 +139,23 @@ export const ArtworkLightbox: React.FC<ArtworkLightboxProps> = ({
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.96 }}
           transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          className="relative w-full max-w-6xl max-h-[92vh] bg-[#F7F3EB] dark:bg-[#201916] rounded-2xl shadow-2xl border border-white/20 dark:border-white/10 flex flex-col lg:flex-row overflow-hidden"
+          className="relative flex max-h-[92vh] w-full max-w-6xl flex-col overflow-hidden rounded-2xl border border-white/20 bg-[#F7F3EB] shadow-2xl lg:flex-row dark:border-white/10 dark:bg-[#201916]"
         >
           {/* Top Bar on Mobile & Controls Bar */}
           <div className="absolute top-4 right-4 z-30 flex items-center gap-2">
             <div className="relative">
               <button
                 onClick={() => setIsShareMenuOpen((isOpen) => !isOpen)}
-                className="p-2.5 rounded-full bg-[#EFE9DC]/90 dark:bg-[#2C221E]/90 text-[#2C221E] dark:text-[#F5EFEB] hover:bg-[#C86D51] hover:text-white transition-all shadow-sm cursor-pointer"
+                className="cursor-pointer rounded-full bg-[#EFE9DC]/90 p-2.5 text-[#2C221E] shadow-sm transition-all hover:bg-[#C86D51] hover:text-white dark:bg-[#2C221E]/90 dark:text-[#F5EFEB]"
                 title={t.lightbox.shareBtn}
                 aria-label={t.lightbox.shareBtn}
                 aria-expanded={isShareMenuOpen}
                 aria-haspopup="true"
               >
-                <Share2 className="w-4 h-4" />
+                <Share2 className="h-4 w-4" />
               </button>
               {isShareMenuOpen && (
-                <div className="absolute right-0 top-full mt-2 grid w-44 grid-cols-3 gap-3 rounded-xl border border-[#2C221E]/10 dark:border-white/10 bg-[#F7F3EB] dark:bg-[#201916] p-3 shadow-xl">
+                <div className="absolute top-full right-0 mt-2 grid w-44 grid-cols-3 gap-3 rounded-xl border border-[#2C221E]/10 bg-[#F7F3EB] p-3 shadow-xl dark:border-white/10 dark:bg-[#201916]">
                   <EmailShareButton
                     url={shareUrl}
                     subject={shareTitle}
@@ -170,16 +168,32 @@ export const ArtworkLightbox: React.FC<ArtworkLightboxProps> = ({
                   <FacebookShareButton url={shareUrl} aria-label="Share on Facebook">
                     <FacebookIcon size={32} round />
                   </FacebookShareButton>
-                  <WhatsappShareButton url={shareUrl} title={shareTitle} aria-label="Share on WhatsApp">
+                  <WhatsappShareButton
+                    url={shareUrl}
+                    title={shareTitle}
+                    aria-label="Share on WhatsApp"
+                  >
                     <WhatsappIcon size={32} round />
                   </WhatsappShareButton>
-                  <LinkedinShareButton url={shareUrl} title={shareTitle} aria-label="Share on LinkedIn">
+                  <LinkedinShareButton
+                    url={shareUrl}
+                    title={shareTitle}
+                    aria-label="Share on LinkedIn"
+                  >
                     <LinkedinIcon size={32} round />
                   </LinkedinShareButton>
-                  <BlueskyShareButton url={shareUrl} title={shareTitle} aria-label="Share on Bluesky">
+                  <BlueskyShareButton
+                    url={shareUrl}
+                    title={shareTitle}
+                    aria-label="Share on Bluesky"
+                  >
                     <BlueskyIcon size={32} round />
                   </BlueskyShareButton>
-                  <TelegramShareButton url={shareUrl} title={shareTitle} aria-label="Share on Telegram">
+                  <TelegramShareButton
+                    url={shareUrl}
+                    title={shareTitle}
+                    aria-label="Share on Telegram"
+                  >
                     <TelegramIcon size={32} round />
                   </TelegramShareButton>
                 </div>
@@ -187,35 +201,35 @@ export const ArtworkLightbox: React.FC<ArtworkLightboxProps> = ({
             </div>
             <button
               onClick={onClose}
-              className="p-2.5 rounded-full bg-[#EFE9DC]/90 dark:bg-[#2C221E]/90 text-[#2C221E] dark:text-[#F5EFEB] hover:bg-[#C86D51] hover:text-white transition-all shadow-sm cursor-pointer"
+              className="cursor-pointer rounded-full bg-[#EFE9DC]/90 p-2.5 text-[#2C221E] shadow-sm transition-all hover:bg-[#C86D51] hover:text-white dark:bg-[#2C221E]/90 dark:text-[#F5EFEB]"
               aria-label={t.lightbox.close}
             >
-              <X className="w-5 h-5" />
+              <X className="h-5 w-5" />
             </button>
           </div>
 
           {/* Left / Center: Interactive Canvas Viewer */}
-          <div className="lg:w-7/12 xl:w-2/3 bg-[#E9E3D5] dark:bg-[#141110] relative flex items-center justify-center min-h-95 lg:min-h-145 p-4 sm:p-8 select-none overflow-hidden">
+          <div className="relative flex min-h-95 items-center justify-center overflow-hidden bg-[#E9E3D5] p-4 select-none sm:p-8 lg:min-h-145 lg:w-7/12 xl:w-2/3 dark:bg-[#141110]">
             {/* Previous & Next Arrow Controls */}
             <button
               onClick={onPrevious}
-              className="absolute left-3 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-[#F7F3EB]/80 dark:bg-[#2C221E]/80 text-[#2C221E] dark:text-[#F5EFEB] hover:bg-[#C86D51] hover:text-white transition-all shadow-md cursor-pointer"
+              className="absolute top-1/2 left-3 z-20 -translate-y-1/2 cursor-pointer rounded-full bg-[#F7F3EB]/80 p-3 text-[#2C221E] shadow-md transition-all hover:bg-[#C86D51] hover:text-white dark:bg-[#2C221E]/80 dark:text-[#F5EFEB]"
               aria-label={t.lightbox.previous}
             >
-              <ChevronLeft className="w-5 h-5" />
+              <ChevronLeft className="h-5 w-5" />
             </button>
 
             <button
               onClick={onNext}
-              className="absolute right-3 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-[#F7F3EB]/80 dark:bg-[#2C221E]/80 text-[#2C221E] dark:text-[#F5EFEB] hover:bg-[#C86D51] hover:text-white transition-all shadow-md cursor-pointer"
+              className="absolute top-1/2 right-3 z-20 -translate-y-1/2 cursor-pointer rounded-full bg-[#F7F3EB]/80 p-3 text-[#2C221E] shadow-md transition-all hover:bg-[#C86D51] hover:text-white dark:bg-[#2C221E]/80 dark:text-[#F5EFEB]"
               aria-label={t.lightbox.next}
             >
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className="h-5 w-5" />
             </button>
 
             {/* Draggable & Zoomable Canvas Image */}
             <div
-              className={`w-full h-full flex items-center justify-center transition-all ${
+              className={`flex h-full w-full items-center justify-center transition-all ${
                 zoomLevel > 1 ? 'cursor-grab active:cursor-grabbing' : 'cursor-default'
               }`}
               onMouseDown={handleMouseDown}
@@ -234,50 +248,50 @@ export const ArtworkLightbox: React.FC<ArtworkLightboxProps> = ({
                   transform: `scale(${zoomLevel}) translate(${panOffset.x / zoomLevel}px, ${panOffset.y / zoomLevel}px)`,
                   transformOrigin: 'center center'
                 }}
-                className="max-w-full max-h-[75vh] object-contain shadow-2xl rounded-sm transition-transform duration-200"
+                className="max-h-[75vh] max-w-full rounded-sm object-contain shadow-2xl transition-transform duration-200"
                 draggable={false}
               />
             </div>
 
             {/* Zoom Control Bar Bottom-Center */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#F7F3EB]/90 dark:bg-[#2C221E]/90 backdrop-blur-md border border-[#2C221E]/10 dark:border-white/10 shadow-lg text-xs">
+            <div className="absolute bottom-4 left-1/2 z-20 flex -translate-x-1/2 items-center gap-1.5 rounded-full border border-[#2C221E]/10 bg-[#F7F3EB]/90 px-3 py-1.5 text-xs shadow-lg backdrop-blur-md dark:border-white/10 dark:bg-[#2C221E]/90">
               <button
                 onClick={handleZoomIn}
-                className="p-1.5 text-[#2C221E] dark:text-[#F5EFEB] hover:text-[#C86D51] transition-colors"
+                className="p-1.5 text-[#2C221E] transition-colors hover:text-[#C86D51] dark:text-[#F5EFEB]"
                 title={t.lightbox.zoomIn}
               >
-                <ZoomIn className="w-4 h-4" />
+                <ZoomIn className="h-4 w-4" />
               </button>
-              <span className="font-mono text-[11px] text-[#6B5E57] dark:text-[#A89B93] px-1">
+              <span className="px-1 font-mono text-[11px] text-[#6B5E57] dark:text-[#A89B93]">
                 {Math.round(zoomLevel * 100)}%
               </span>
               <button
                 onClick={handleZoomOut}
                 disabled={zoomLevel <= 1}
-                className="p-1.5 text-[#2C221E] dark:text-[#F5EFEB] hover:text-[#C86D51] disabled:opacity-30 transition-colors"
+                className="p-1.5 text-[#2C221E] transition-colors hover:text-[#C86D51] disabled:opacity-30 dark:text-[#F5EFEB]"
                 title={t.lightbox.zoomOut}
               >
-                <ZoomOut className="w-4 h-4" />
+                <ZoomOut className="h-4 w-4" />
               </button>
               {zoomLevel > 1 && (
                 <button
                   onClick={handleResetZoom}
-                  className="p-1.5 text-[#C86D51] hover:underline text-[10px] uppercase font-semibold ml-1"
+                  className="ml-1 p-1.5 text-[10px] font-semibold text-[#C86D51] uppercase hover:underline"
                   title={t.lightbox.resetZoom}
                 >
-                  <RotateCcw className="w-3.5 h-3.5" />
+                  <RotateCcw className="h-3.5 w-3.5" />
                 </button>
               )}
             </div>
           </div>
 
           {/* Right: Curatorial Story & Metadata Sidebar */}
-          <div className="lg:w-5/12 xl:w-1/3 p-6 sm:p-8 flex flex-col justify-between overflow-y-auto max-h-[75vh] lg:max-h-[85vh]">
+          <div className="flex max-h-[75vh] flex-col justify-between overflow-y-auto p-6 sm:p-8 lg:max-h-[85vh] lg:w-5/12 xl:w-1/3">
             <div className="space-y-6">
               {/* Collection Pill */}
               <div className="flex items-center justify-between">
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#EFE9DC] dark:bg-[#2C221E] text-[#C86D51] dark:text-[#EDB45D] text-[10px] font-semibold uppercase tracking-widest">
-                  <Sparkles className="w-3 h-3" />
+                <span className="inline-flex items-center gap-1.5 rounded-md bg-[#EFE9DC] px-2.5 py-1 text-[10px] font-semibold tracking-widest text-[#C86D51] uppercase dark:bg-[#2C221E] dark:text-[#EDB45D]">
+                  <Sparkles className="h-3 w-3" />
                   <span>{artwork.year}</span>
                 </span>
                 {/* <span className="text-xs text-[#6B5E57] dark:text-[#A89B93] font-mono">
@@ -287,19 +301,19 @@ export const ArtworkLightbox: React.FC<ArtworkLightboxProps> = ({
 
               {/* Title */}
               <div>
-                <h3 className="font-editorial text-3xl sm:text-4xl text-[#2C221E] dark:text-[#F5EFEB] leading-tight">
+                <h3 className="font-editorial text-3xl leading-tight text-[#2C221E] sm:text-4xl dark:text-[#F5EFEB]">
                   {title}
                 </h3>
-                <p className="font-serif italic text-sm text-[#C86D51] dark:text-[#EDB45D] mt-1">
+                <p className="mt-1 font-serif text-sm text-[#C86D51] italic dark:text-[#EDB45D]">
                   {medium}
                 </p>
               </div>
 
               {/* Artwork Specifications Table */}
-              <div className="grid grid-cols-2 gap-3 py-3 border-y border-[#2C221E]/10 dark:border-white/10 text-xs">
+              <div className="grid grid-cols-2 gap-3 border-y border-[#2C221E]/10 py-3 text-xs dark:border-white/10">
                 {artwork.dimensions && (
                   <div>
-                    <span className="text-[10px] uppercase tracking-wider text-[#6B5E57] dark:text-[#A89B93] block">
+                    <span className="block text-[10px] tracking-wider text-[#6B5E57] uppercase dark:text-[#A89B93]">
                       {t.lightbox.dimensions}
                     </span>
                     <span className="font-medium text-[#2C221E] dark:text-[#F5EFEB]">
@@ -308,39 +322,34 @@ export const ArtworkLightbox: React.FC<ArtworkLightboxProps> = ({
                   </div>
                 )}
                 <div>
-                  <span className="text-[10px] uppercase tracking-wider text-[#6B5E57] dark:text-[#A89B93] block">
+                  <span className="block text-[10px] tracking-wider text-[#6B5E57] uppercase dark:text-[#A89B93]">
                     {t.lightbox.series}
                   </span>
-                  <span className="font-medium text-[#2C221E] dark:text-[#F5EFEB] capitalize">
+                  <span className="font-medium text-[#2C221E] capitalize dark:text-[#F5EFEB]">
                     {artwork.series}
                   </span>
                 </div>
-                {artwork.signedNote && (
-                  <div className="col-span-2 pt-1 text-[11px] text-[#6B5E57] dark:text-[#A89B93] italic">
-                    {artwork.signedNote}
-                  </div>
-                )}
               </div>
 
               {/* Curated Story Narrative */}
               <div>
-                <h4 className="text-xs uppercase tracking-widest text-[#2D5A43] dark:text-[#4E8A6B] font-semibold mb-2">
+                <h4 className="mb-2 text-xs font-semibold tracking-widest text-[#2D5A43] uppercase dark:text-[#4E8A6B]">
                   {t.lightbox.storyHeader}
                 </h4>
-                <p className="font-serif text-sm sm:text-base leading-relaxed text-[#6B5E57] dark:text-[#A89B93]">
+                <p className="font-serif text-sm leading-relaxed text-[#6B5E57] sm:text-base dark:text-[#A89B93]">
                   {story}
                 </p>
               </div>
 
               {/* Tags */}
-              {artwork.tags && (
+              {tags.length > 0 && (
                 <div className="flex flex-wrap gap-1.5 pt-2">
-                  {artwork.tags.map((tag) => (
+                  {tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2 py-0.5 rounded text-[10px] bg-[#EFE9DC]/60 dark:bg-[#251E1A] text-[#6B5E57] dark:text-[#A89B93]"
+                      className="rounded bg-[#EFE9DC]/60 px-2 py-0.5 text-[10px] text-[#6B5E57] dark:bg-[#251E1A] dark:text-[#A89B93]"
                     >
-                      #{tag}
+                      #{tag.toLowerCase().replace(/\s+/g, '')}
                     </span>
                   ))}
                 </div>
@@ -348,18 +357,18 @@ export const ArtworkLightbox: React.FC<ArtworkLightboxProps> = ({
             </div>
 
             {/* Bottom Actions: Inquire Directly about this work */}
-            <div className="mt-8 pt-4 border-t border-[#2C221E]/10 dark:border-white/10 flex flex-col gap-2">
+            <div className="mt-8 flex flex-col gap-2 border-t border-[#2C221E]/10 pt-4 dark:border-white/10">
               <button
                 onClick={() => {
                   onClose();
                   onInquire(artwork.id);
                 }}
-                className="w-full py-3 px-4 rounded-lg bg-[#C86D51] hover:bg-[#B3593F] text-white font-sans-human font-medium text-xs tracking-wider uppercase transition-colors shadow-md flex items-center justify-center gap-2 cursor-pointer"
+                className="font-sans-human flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-[#C86D51] px-4 py-3 text-xs font-medium tracking-wider text-white uppercase shadow-md transition-colors hover:bg-[#B3593F]"
               >
-                <Send className="w-3.5 h-3.5" />
+                <Send className="h-3.5 w-3.5" />
                 <span>{t.lightbox.inquireBtn}</span>
               </button>
-              <p className="text-[10px] text-center text-[#6B5E57] dark:text-[#A89B93]">
+              <p className="text-center text-[10px] text-[#6B5E57] dark:text-[#A89B93]">
                 {language === 'en'
                   ? 'Inquiries are received by the Cecilia Amighetti Estate Archive.'
                   : 'Las consultas son atendidas por el Archivo Familiar de Cecilia Amighetti.'}

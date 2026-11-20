@@ -78,9 +78,13 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectArtwork 
           const matchYear = item.year.includes(q);
           const matchStory =
             item.storyEn.toLowerCase().includes(q) || item.storyEs.toLowerCase().includes(q);
-          const matchTags = item.tags?.some((t) => t.toLowerCase().includes(q));
+          const matchTags = [item.tagsEn, item.tagsEs].some((tags) =>
+            tags.some((tag) => tag.toLowerCase().includes(q))
+          );
 
-          return matchTitleEn || matchTitleEs || matchMedium || matchYear || matchStory || matchTags;
+          return (
+            matchTitleEn || matchTitleEs || matchMedium || matchYear || matchStory || matchTags
+          );
         }
         return true;
       })
@@ -103,37 +107,40 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectArtwork 
   }, [activeSeries, searchQuery, sortBy, language]);
 
   return (
-    <section id="obras" className="py-24 sm:py-32 relative bg-[#F7F3EB] dark:bg-[#1A1614] border-b border-[#2C221E]/10 dark:border-white/10">
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 relative z-10">
+    <section
+      id="obras"
+      className="relative border-b border-[#2C221E]/10 bg-[#F7F3EB] py-24 sm:py-32 dark:border-white/10 dark:bg-[#1A1614]"
+    >
+      <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#C86D51] font-semibold mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
+        <div className="mx-auto mb-14 max-w-3xl text-center">
+          <div className="mb-3 inline-flex items-center gap-2 text-xs font-semibold tracking-widest text-[#C86D51] uppercase">
+            <Sparkles className="h-3.5 w-3.5" />
             <span>{t.gallery.tag}</span>
           </div>
-          <h2 className="font-editorial text-4xl sm:text-5xl lg:text-6xl text-[#2C221E] dark:text-[#F5EFEB] leading-tight">
+          <h2 className="font-editorial text-4xl leading-tight text-[#2C221E] sm:text-5xl lg:text-6xl dark:text-[#F5EFEB]">
             {t.gallery.title}
           </h2>
-          <p className="font-serif text-base sm:text-lg text-[#6B5E57] dark:text-[#A89B93] mt-4 leading-relaxed">
+          <p className="mt-4 font-serif text-base leading-relaxed text-[#6B5E57] sm:text-lg dark:text-[#A89B93]">
             {t.gallery.subtitle}
           </p>
-          <div className="w-16 h-0.5 bg-[#C86D51] mx-auto mt-6" />
+          <div className="mx-auto mt-6 h-0.5 w-16 bg-[#C86D51]" />
         </div>
 
         {/* Filter Navigation & Search Bar */}
-        <div className="space-y-6 mb-12">
+        <div className="mb-12 space-y-6">
           {/* Scrollable Filter Tabs */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none no-scrollbar justify-start sm:justify-center">
+          <div className="no-scrollbar flex scrollbar-none items-center justify-start gap-2 overflow-x-auto pb-2 sm:justify-center">
             {filterTabs.map((tab) => {
               const isActive = activeSeries === tab.key;
               return (
                 <button
                   key={tab.key}
                   onClick={() => setActiveSeries(tab.key)}
-                  className={`px-4 py-2 rounded-full text-xs font-sans-human font-medium tracking-wide whitespace-nowrap transition-all duration-200 cursor-pointer ${
+                  className={`font-sans-human cursor-pointer rounded-full px-4 py-2 text-xs font-medium tracking-wide whitespace-nowrap transition-all duration-200 ${
                     isActive
-                      ? 'bg-[#2C221E] dark:bg-[#F5EFEB] text-[#F7F3EB] dark:text-[#1A1614] shadow-md'
-                      : 'bg-[#FAF7F0] dark:bg-[#241E1B] text-[#6B5E57] dark:text-[#A89B93] hover:text-[#2C221E] dark:hover:text-[#F5EFEB] border border-[#2C221E]/10 dark:border-white/10 hover:border-[#C86D51]'
+                      ? 'bg-[#2C221E] text-[#F7F3EB] shadow-md dark:bg-[#F5EFEB] dark:text-[#1A1614]'
+                      : 'border border-[#2C221E]/10 bg-[#FAF7F0] text-[#6B5E57] hover:border-[#C86D51] hover:text-[#2C221E] dark:border-white/10 dark:bg-[#241E1B] dark:text-[#A89B93] dark:hover:text-[#F5EFEB]'
                   }`}
                 >
                   {tab.label}
@@ -143,21 +150,21 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectArtwork 
           </div>
 
           {/* Search Input & Custom Styled Sort Dropdown */}
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 max-w-4xl mx-auto">
+          <div className="mx-auto flex max-w-4xl flex-col items-center justify-between gap-4 sm:flex-row">
             {/* Search Input */}
             <div className="relative w-full sm:w-80">
-              <Search className="w-4 h-4 text-[#6B5E57] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+              <Search className="pointer-events-none absolute top-1/2 left-3.5 h-4 w-4 -translate-y-1/2 text-[#6B5E57]" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder={t.gallery.searchPlaceholder}
-                className="w-full pl-10 pr-4 py-2.5 rounded-full bg-[#FAF7F0] dark:bg-[#241E1B] border border-[#2C221E]/15 dark:border-white/15 text-xs text-[#2C221E] dark:text-[#F5EFEB] placeholder-[#6B5E57]/60 focus:outline-none focus:border-[#C86D51] shadow-xs transition-colors"
+                className="w-full rounded-full border border-[#2C221E]/15 bg-[#FAF7F0] py-2.5 pr-4 pl-10 text-xs text-[#2C221E] placeholder-[#6B5E57]/60 shadow-xs transition-colors focus:border-[#C86D51] focus:outline-none dark:border-white/15 dark:bg-[#241E1B] dark:text-[#F5EFEB]"
               />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery('')}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-[#6B5E57] hover:text-[#C86D51] cursor-pointer"
+                  className="absolute top-1/2 right-3 -translate-y-1/2 cursor-pointer text-xs text-[#6B5E57] hover:text-[#C86D51]"
                 >
                   ×
                 </button>
@@ -165,7 +172,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectArtwork 
             </div>
 
             {/* Counter & Custom Studio Dropdown */}
-            <div className="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end text-xs text-[#6B5E57] dark:text-[#A89B93]">
+            <div className="flex w-full items-center justify-between gap-3 text-xs text-[#6B5E57] sm:w-auto sm:justify-end dark:text-[#A89B93]">
               <span className="font-mono text-[11px] whitespace-nowrap">
                 {filteredArtworks.length} {t.gallery.countLabel}
               </span>
@@ -174,13 +181,13 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectArtwork 
               <div className="relative" ref={dropdownRef}>
                 <button
                   onClick={() => setSortDropdownOpen(!sortDropdownOpen)}
-                  className="flex items-center gap-2 px-3.5 py-2 rounded-full bg-[#FAF7F0] dark:bg-[#241E1B] border border-[#2C221E]/15 dark:border-white/15 hover:border-[#C86D51] text-xs font-sans-human font-medium text-[#2C221E] dark:text-[#F5EFEB] shadow-xs transition-all cursor-pointer group"
+                  className="font-sans-human group flex cursor-pointer items-center gap-2 rounded-full border border-[#2C221E]/15 bg-[#FAF7F0] px-3.5 py-2 text-xs font-medium text-[#2C221E] shadow-xs transition-all hover:border-[#C86D51] dark:border-white/15 dark:bg-[#241E1B] dark:text-[#F5EFEB]"
                   aria-expanded={sortDropdownOpen}
                 >
-                  <ArrowUpDown className="w-3.5 h-3.5 text-[#C86D51] group-hover:scale-110 transition-transform" />
-                  <span className="truncate max-w-37.5">{currentSortLabel}</span>
+                  <ArrowUpDown className="h-3.5 w-3.5 text-[#C86D51] transition-transform group-hover:scale-110" />
+                  <span className="max-w-37.5 truncate">{currentSortLabel}</span>
                   <ChevronDown
-                    className={`w-3.5 h-3.5 text-[#6B5E57] dark:text-[#A89B93] transition-transform duration-200 ${
+                    className={`h-3.5 w-3.5 text-[#6B5E57] transition-transform duration-200 dark:text-[#A89B93] ${
                       sortDropdownOpen ? 'rotate-180 text-[#C86D51]' : ''
                     }`}
                   />
@@ -194,9 +201,9 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectArtwork 
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 6, scale: 0.96 }}
                       transition={{ duration: 0.18, ease: 'easeOut' }}
-                      className="absolute right-0 top-full mt-2 z-30 min-w-52.5 p-1.5 rounded-xl bg-[#FAF7F0] dark:bg-[#241E1B] border border-[#2C221E]/15 dark:border-white/15 shadow-xl backdrop-blur-md overflow-hidden"
+                      className="absolute top-full right-0 z-30 mt-2 min-w-52.5 overflow-hidden rounded-xl border border-[#2C221E]/15 bg-[#FAF7F0] p-1.5 shadow-xl backdrop-blur-md dark:border-white/15 dark:bg-[#241E1B]"
                     >
-                      <div className="px-3 py-1.5 text-[10px] uppercase tracking-wider font-mono text-[#6B5E57] dark:text-[#A89B93] border-b border-[#2C221E]/8 dark:border-white/10 mb-1">
+                      <div className="mb-1 border-b border-[#2C221E]/8 px-3 py-1.5 font-mono text-[10px] tracking-wider text-[#6B5E57] uppercase dark:border-white/10 dark:text-[#A89B93]">
                         {language === 'en' ? 'Sort Collection' : 'Ordenar Colección'}
                       </div>
                       {sortOptions.map((option) => {
@@ -208,14 +215,14 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectArtwork 
                               setSortBy(option.key);
                               setSortDropdownOpen(false);
                             }}
-                            className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs font-sans-human text-left transition-colors cursor-pointer ${
+                            className={`font-sans-human flex w-full cursor-pointer items-center justify-between rounded-lg px-3 py-2 text-left text-xs transition-colors ${
                               isSelected
-                                ? 'bg-[#C86D51]/12 text-[#C86D51] dark:text-[#EDB45D] font-semibold'
-                                : 'text-[#2C221E] dark:text-[#F5EFEB] hover:bg-[#EFE9DC]/70 dark:hover:bg-[#1E1815]'
+                                ? 'bg-[#C86D51]/12 font-semibold text-[#C86D51] dark:text-[#EDB45D]'
+                                : 'text-[#2C221E] hover:bg-[#EFE9DC]/70 dark:text-[#F5EFEB] dark:hover:bg-[#1E1815]'
                             }`}
                           >
                             <span>{option.label}</span>
-                            {isSelected && <Check className="w-3.5 h-3.5 text-[#C86D51]" />}
+                            {isSelected && <Check className="h-3.5 w-3.5 text-[#C86D51]" />}
                           </button>
                         );
                       })}
@@ -229,7 +236,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectArtwork 
 
         {/* Artworks Masonry-style Grid */}
         {filteredArtworks.length === 0 ? (
-          <div className="text-center py-20 bg-[#FAF7F0] dark:bg-[#201916] rounded-2xl border border-dashed border-[#2C221E]/20 dark:border-white/10 max-w-xl mx-auto">
+          <div className="mx-auto max-w-xl rounded-2xl border border-dashed border-[#2C221E]/20 bg-[#FAF7F0] py-20 text-center dark:border-white/10 dark:bg-[#201916]">
             <p className="font-serif text-lg text-[#6B5E57] dark:text-[#A89B93]">
               {t.gallery.emptySearch}
             </p>
@@ -238,7 +245,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectArtwork 
                 setActiveSeries('all');
                 setSearchQuery('');
               }}
-              className="mt-4 px-4 py-2 rounded-full bg-[#C86D51] text-white text-xs font-medium cursor-pointer"
+              className="mt-4 cursor-pointer rounded-full bg-[#C86D51] px-4 py-2 text-xs font-medium text-white"
             >
               {language === 'en' ? 'Reset Filters' : 'Restablecer Filtros'}
             </button>
@@ -246,7 +253,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectArtwork 
         ) : (
           <motion.div
             layout
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8 sm:gap-10"
+            className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-10 lg:grid-cols-3 xl:grid-cols-3"
           >
             <AnimatePresence>
               {filteredArtworks.map((item, index) => {
@@ -266,51 +273,51 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectArtwork 
                       delay: (index % 3) * 0.08,
                       ease: [0.22, 1, 0.36, 1]
                     }}
-                    className="group cursor-pointer flex flex-col"
+                    className="group flex cursor-pointer flex-col"
                     onClick={() => onSelectArtwork(item)}
                   >
                     {/* Framed Canvas Studio Presentation */}
-                    <div className="relative p-3.5 sm:p-4 rounded-xl bg-[#FAF7F0] dark:bg-[#221B18] border border-[#2C221E]/10 dark:border-white/10 shadow-md transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1.5 group-hover:shadow-2xl group-hover:border-[#C86D51]/40 flex-1 flex flex-col justify-between">
+                    <div className="relative flex flex-1 flex-col justify-between rounded-xl border border-[#2C221E]/10 bg-[#FAF7F0] p-3.5 shadow-md transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1.5 group-hover:border-[#C86D51]/40 group-hover:shadow-2xl sm:p-4 dark:border-white/10 dark:bg-[#221B18]">
                       {/* Canvas Surface with golden-hour glow on hover */}
-                      <div className="relative w-full aspect-4/3 rounded-lg overflow-hidden bg-[#EAE4D7] dark:bg-[#161211] flex items-center justify-center p-2">
+                      <div className="relative flex aspect-4/3 w-full items-center justify-center overflow-hidden rounded-lg bg-[#EAE4D7] p-2 dark:bg-[#161211]">
                         <img
                           src={`/artworks/${item.image}`}
                           alt={title}
                           loading="lazy"
-                          className="w-full h-full object-contain transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
+                          className="h-full w-full object-contain transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
                         />
 
                         {/* Hover Golden-Hour Glow & Eye Action Icon */}
-                        <div className="absolute inset-0 bg-linear-to-t from-[#2C221E]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-3.5">
-                          <span className="text-white text-xs font-serif italic truncate max-w-[70%]">
+                        <div className="absolute inset-0 flex items-end justify-between bg-linear-to-t from-[#2C221E]/60 via-transparent to-transparent p-3.5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                          <span className="max-w-[70%] truncate font-serif text-xs text-white italic">
                             {t.gallery.viewHighRes}
                           </span>
-                          <span className="w-8 h-8 rounded-full bg-[#E09F3E] text-white flex items-center justify-center shadow-md">
-                            <Eye className="w-4 h-4" />
+                          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#E09F3E] text-white shadow-md">
+                            <Eye className="h-4 w-4" />
                           </span>
                         </div>
 
                         {/* Top-Right Highlight badge */}
                         {item.isHighlight && (
-                          <div className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded bg-[#C86D51] text-white text-[9px] font-mono uppercase tracking-wider shadow-xs">
+                          <div className="absolute top-2.5 right-2.5 rounded bg-[#C86D51] px-2 py-0.5 font-mono text-[9px] tracking-wider text-white uppercase shadow-xs">
                             {language === 'en' ? 'Highlight' : 'Destacada'}
                           </div>
                         )}
                       </div>
 
                       {/* Placard / Caption below canvas */}
-                      <div className="mt-4 pt-3 border-t border-[#2C221E]/8 dark:border-white/10 flex flex-col justify-between">
-                        <div className="flex items-center justify-between gap-2 text-[11px] text-[#6B5E57] dark:text-[#A89B93] mb-1 font-mono">
+                      <div className="mt-4 flex flex-col justify-between border-t border-[#2C221E]/8 pt-3 dark:border-white/10">
+                        <div className="mb-1 flex items-center justify-between gap-2 font-mono text-[11px] text-[#6B5E57] dark:text-[#A89B93]">
                           <span>{item.year}</span>
                           <span className="capitalize">{item.series}</span>
                         </div>
-                        <h3 className="font-editorial text-2xl text-[#2C221E] dark:text-[#F5EFEB] group-hover:text-[#C86D51] transition-colors leading-tight mb-1">
+                        <h3 className="font-editorial mb-1 text-2xl leading-tight text-[#2C221E] transition-colors group-hover:text-[#C86D51] dark:text-[#F5EFEB]">
                           {title}
                         </h3>
-                        <p className="font-sans-human text-xs text-[#6B5E57] dark:text-[#A89B93] line-clamp-1 mb-2">
+                        <p className="font-sans-human mb-2 line-clamp-1 text-xs text-[#6B5E57] dark:text-[#A89B93]">
                           {medium}
                         </p>
-                        <p className="font-serif italic text-xs text-[#6B5E57]/80 dark:text-[#A89B93]/80 line-clamp-2">
+                        <p className="line-clamp-2 font-serif text-xs text-[#6B5E57]/80 italic dark:text-[#A89B93]/80">
                           {story}
                         </p>
                       </div>

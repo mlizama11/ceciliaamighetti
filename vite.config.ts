@@ -54,10 +54,7 @@ const artworkSharePages = (configuredSiteUrl?: string): Plugin => ({
       const artworkPath = `/share/${encodeURIComponent(artwork.id)}/`;
       const artworkUrl = new URL(artworkPath, siteOrigin).href;
       const imageUrl = new URL(`/artworks/${encodeURIComponent(artwork.image)}`, siteOrigin).href;
-      const appUrl = new URL(
-        `/?artwork=${encodeURIComponent(artwork.id)}`,
-        siteOrigin
-      ).href;
+      const appUrl = new URL(`/?artwork=${encodeURIComponent(artwork.id)}`, siteOrigin).href;
       const title = `${artwork.titleEn} (${artwork.year}) | Cecilia Amighetti Prieto`;
       const description = `${artwork.mediumEn}. ${artwork.storyEn}`
         .replace(/\s+/g, ' ')

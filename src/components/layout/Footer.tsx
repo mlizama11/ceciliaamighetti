@@ -15,54 +15,54 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-[#2C221E] text-[#F7F3EB] pt-20 pb-12 relative overflow-hidden border-t border-[#2C221E]/30">
+    <footer className="relative overflow-hidden border-t border-[#2C221E]/30 bg-[#2C221E] pt-20 pb-12 text-[#F7F3EB]">
       {/* Gentle background glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-40 bg-linear-to-b from-[#C86D51]/15 to-transparent blur-3xl pointer-events-none" />
+      <div className="pointer-events-none absolute top-0 left-1/2 h-40 w-full max-w-4xl -translate-x-1/2 bg-linear-to-b from-[#C86D51]/15 to-transparent blur-3xl" />
 
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-white/10 items-start">
+      <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="grid grid-cols-1 items-start gap-12 border-b border-white/10 pb-16 md:grid-cols-12">
           {/* Col 1: Brand & Memorial Quote */}
-          <div className="md:col-span-6 space-y-4">
+          <div className="space-y-4 md:col-span-6">
             <SignatureLogo isLight className="text-white" animated={false} />
-            <p className="font-serif italic text-xl text-[#EDB45D] max-w-md pt-2">
+            <p className="max-w-md pt-2 font-serif text-xl text-[#EDB45D] italic">
               {t.footer.memorialQuote}
             </p>
-            <p className="font-sans-human text-xs text-[#A89B93] leading-relaxed max-w-lg">
+            <p className="font-sans-human max-w-lg text-xs leading-relaxed text-[#A89B93]">
               {t.footer.estateNote}
             </p>
-            <p className="text-xs text-[#C86D51] font-mono tracking-wider pt-2">
+            <p className="pt-2 font-mono text-xs tracking-wider text-[#C86D51]">
               {t.footer.familySignoff}
             </p>
           </div>
 
           {/* Col 2: Navigation Links */}
-          <div className="md:col-span-3 space-y-3">
-            <span className="text-xs uppercase tracking-widest text-[#EDB45D] font-mono font-semibold block mb-4">
+          <div className="space-y-3 md:col-span-3">
+            <span className="mb-4 block font-mono text-xs font-semibold tracking-widest text-[#EDB45D] uppercase">
               {language === 'en' ? 'Archive Navigation' : 'Navegación del Archivo'}
             </span>
             <ul className="space-y-2.5 text-sm text-[#A89B93]">
               <li>
-                <a href="#obras" className="hover:text-white transition-colors">
+                <a href="#obras" className="transition-colors hover:text-white">
                   {t.nav.collection}
                 </a>
               </li>
               <li>
-                <a href="#biografia" className="hover:text-white transition-colors">
+                <a href="#biografia" className="transition-colors hover:text-white">
                   {t.nav.biography}
                 </a>
               </li>
               <li>
-                <a href="#cronologia" className="hover:text-white transition-colors">
+                <a href="#cronologia" className="transition-colors hover:text-white">
                   {t.nav.timeline}
                 </a>
               </li>
               <li>
-                <a href="#exposiciones" className="hover:text-white transition-colors">
+                <a href="#exposiciones" className="transition-colors hover:text-white">
                   {t.nav.exhibitions}
                 </a>
               </li>
               <li>
-                <a href="#consultas" className="hover:text-white transition-colors">
+                <a href="#consultas" className="transition-colors hover:text-white">
                   {t.nav.inquiries}
                 </a>
               </li>
@@ -70,29 +70,29 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Col 3: Cultural Institutions & Archives */}
-          <div className="md:col-span-3 space-y-3">
-            <span className="text-xs uppercase tracking-widest text-[#EDB45D] font-mono font-semibold block mb-4">
+          <div className="space-y-3 md:col-span-3">
+            <span className="mb-4 block font-mono text-xs font-semibold tracking-widest text-[#EDB45D] uppercase">
               {language === 'en' ? 'Institutional Records' : 'Acervos e Instituciones'}
             </span>
             <ul className="space-y-2 text-xs text-[#A89B93]">
               <li className="flex items-center gap-2">
-                <Sparkles className="w-3.5 h-3.5 text-[#C86D51]" />
+                <Sparkles className="h-3.5 w-3.5 text-[#C86D51]" />
                 <span>Polyforum Cultural Siqueiros</span>
               </li>
               <li className="flex items-center gap-2">
-                <Sparkles className="w-3.5 h-3.5 text-[#C86D51]" />
+                <Sparkles className="h-3.5 w-3.5 text-[#C86D51]" />
                 <span>Universidad de Costa Rica (UCR)</span>
               </li>
               <li className="flex items-center gap-2">
-                <Sparkles className="w-3.5 h-3.5 text-[#C86D51]" />
+                <Sparkles className="h-3.5 w-3.5 text-[#C86D51]" />
                 <span>Museo de los Niños · Galería Nacional</span>
               </li>
               <li className="flex items-center gap-2">
-                <Sparkles className="w-3.5 h-3.5 text-[#C86D51]" />
+                <Sparkles className="h-3.5 w-3.5 text-[#C86D51]" />
                 <span>Centro de Orientación Familiar (COF)</span>
               </li>
               <li className="flex items-center gap-2">
-                <Sparkles className="w-3.5 h-3.5 text-[#C86D51]" />
+                <Sparkles className="h-3.5 w-3.5 text-[#C86D51]" />
                 <span>Colección Familia Amighetti Prieto</span>
               </li>
             </ul>
@@ -100,20 +100,26 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#A89B93]">
-          <div className="space-y-1.5 text-center sm:text-left">
+        <div className="flex flex-col items-center justify-between gap-5 pt-8 text-xs text-[#A89B93] md:flex-row md:gap-4">
+          <div className="w-full space-y-2 text-center md:text-left">
             <p>{t.footer.rights}</p>
-            <p>
+            <p className="flex flex-wrap items-center justify-center gap-x-1 gap-y-1 text-center md:justify-start md:text-left">
               {language === 'en' ? 'Created by ' : 'Creado por '}
               <a
                 href="https://www.linkedin.com/in/mauriciolizama/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#EDB45D] hover:text-white transition-colors"
+                className="text-[#EDB45D] transition-colors hover:text-white"
               >
                 Mauricio Lizama
               </a>
-              {' · '}
+              <span className="flex items-center gap-1">
+                <Heart className="h-3.5 w-3.5 text-[#EDB45D]" />
+                {language === 'en' ? 'with love' : 'con amor'}.
+              </span>
+            </p>
+            <p>
+              {' '}
               {language === 'en'
                 ? 'Information provided by Liana Babbar Amighetti'
                 : 'Información proporcionada por Liana Babbar Amighetti'}
@@ -123,10 +129,10 @@ export const Footer: React.FC = () => {
           <a
             href="#top"
             onClick={handleScrollToTop}
-            className="flex items-center gap-1.5 text-xs text-[#EDB45D] hover:text-white transition-colors cursor-pointer group"
+            className="group flex shrink-0 cursor-pointer items-center gap-1.5 text-xs text-[#EDB45D] transition-colors hover:text-white"
           >
             <span>{t.footer.backToTop}</span>
-            <ArrowUp className="w-3.5 h-3.5 transition-transform group-hover:-translate-y-0.5" />
+            <ArrowUp className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5" />
           </a>
         </div>
       </div>

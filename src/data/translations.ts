@@ -147,12 +147,12 @@ export const translations = {
       memorialDesc: 'Publications, catalog essays, and cultural celebrations in Costa Rica.'
     },
     footer: {
-      memorialQuote:
-        '“The brushstroke lives on where the memory remains warm.”',
+      memorialQuote: '“The brushstroke lives on where the memory remains warm.”',
       estateNote:
         'The Cecilia Amighetti Prieto Memorial Archive is dedicated to the preservation, study, and celebration of her artistic and humanist oeuvre.',
       familySignoff: 'San José, Costa Rica · Curated with Love by Her Descendants',
-      rights: 'All artworks and archival photographs © Estate of Cecilia Amighetti Prieto. All rights reserved.',
+      rights:
+        'All artworks and archival photographs © Estate of Cecilia Amighetti Prieto. All rights reserved.',
       backToTop: 'Back to Studio Top'
     }
   },
@@ -295,21 +295,24 @@ export const translations = {
       sendEmail: 'Escribir al Archivo',
       inquiryTypesTitle: 'Áreas de Coordinación con el Archivo',
       loanTitle: 'Préstamos para Exposiciones',
-      loanDesc: 'Préstamo de obras para museos e instituciones culturales nacionales e internacionales.',
+      loanDesc:
+        'Préstamo de obras para museos e instituciones culturales nacionales e internacionales.',
       researchTitle: 'Investigación Curatorial y Académica',
-      researchDesc: 'Acceso a documentación histórica, manuscritos y reproducciones de alta resolución.',
+      researchDesc:
+        'Acceso a documentación histórica, manuscritos y reproducciones de alta resolución.',
       collectorTitle: 'Custodia y Colecciones',
-      collectorDesc: 'Consultas sobre las obras originales que permanecen bajo custodia de la familia.',
+      collectorDesc:
+        'Consultas sobre las obras originales que permanecen bajo custodia de la familia.',
       memorialTitle: 'Homenajes y Publicaciones',
       memorialDesc: 'Textos de catálogo, libros de arte y actividades culturales en Costa Rica.'
     },
     footer: {
-      memorialQuote:
-        '«La pincelada permanece viva donde la memoria se mantiene cálida.»',
+      memorialQuote: '«La pincelada permanece viva donde la memoria se mantiene cálida.»',
       estateNote:
         'El Archivo Memorial Cecilia Amighetti Prieto está consagrado a la salvaguarda, divulgación y homenaje de su obra plástica y su espíritu humanista.',
       familySignoff: 'San José, Costa Rica · Preservado con amor por sus descendientes',
-      rights: 'Todas las obras y registros fotográficos © Archivo y Sucesión de Cecilia Amighetti Prieto. Todos los derechos reservados.',
+      rights:
+        'Todas las obras y registros fotográficos © Archivo de Cecilia Amighetti Prieto. Todos los derechos reservados.',
       backToTop: 'Volver al Inicio del Taller'
     }
   }

@@ -27,7 +27,7 @@ export const StudioAudioPlayer: React.FC = () => {
     setPlayerExpanded
   } = useAudio();
 
-  const { language, t } = useLanguage();
+  const { language } = useLanguage();
 
   const formatTime = (secs: number) => {
     if (isNaN(secs) || secs < 0) return '0:00';
@@ -44,7 +44,7 @@ export const StudioAudioPlayer: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-5 right-5 z-40 select-none">
+    <div className="fixed right-3 bottom-3 z-40 select-none sm:right-5 sm:bottom-5">
       <AnimatePresence mode="wait">
         {playerExpanded ? (
           /* Expanded Studio Player Card */
@@ -54,31 +54,31 @@ export const StudioAudioPlayer: React.FC = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="w-[320px] sm:w-90 p-4 sm:p-5 rounded-2xl bg-[#FAF7F0]/95 dark:bg-[#221B18]/95 backdrop-blur-xl border border-[#2C221E]/15 dark:border-white/15 shadow-2xl space-y-3"
+            className="w-[320px] space-y-3 rounded-2xl border border-[#2C221E]/15 bg-[#FAF7F0]/95 p-4 shadow-2xl backdrop-blur-xl sm:w-90 sm:p-5 dark:border-white/15 dark:bg-[#221B18]/95"
           >
             {/* Header: Title, Archival Badge, Minimize button */}
             <div className="flex items-start justify-between gap-3">
               <div className="flex items-center gap-3">
                 {/* Rotating Vinyl/Palette Disc */}
                 <div
-                  className={`w-10 h-10 rounded-full bg-[#2C221E] dark:bg-[#1A1614] border border-[#E09F3E]/40 flex items-center justify-center text-[#E09F3E] shrink-0 shadow-sm ${
+                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#E09F3E]/40 bg-[#2C221E] text-[#E09F3E] shadow-sm dark:bg-[#1A1614] ${
                     isPlaying ? 'animate-spin' : ''
                   }`}
                   style={{ animationDuration: '6s' }}
                 >
-                  <Disc3 className="w-5 h-5 text-[#E09F3E]" />
+                  <Disc3 className="h-5 w-5 text-[#E09F3E]" />
                 </div>
                 <div>
                   <div className="flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#C86D51] animate-pulse" />
-                    <span className="text-[10px] uppercase tracking-widest font-mono text-[#C86D51] dark:text-[#EDB45D] font-bold">
+                    <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#C86D51]" />
+                    <span className="font-mono text-[10px] font-bold tracking-widest text-[#C86D51] uppercase dark:text-[#EDB45D]">
                       {language === 'en' ? 'Archival Audio' : 'Archivo Sonoro'}
                     </span>
                   </div>
-                  <h4 className="font-editorial text-lg text-[#2C221E] dark:text-[#F5EFEB] leading-tight font-semibold">
+                  <h4 className="font-editorial text-lg leading-tight font-semibold text-[#2C221E] dark:text-[#F5EFEB]">
                     Cecilia Amighetti
                   </h4>
-                  <p className="font-serif italic text-xs text-[#6B5E57] dark:text-[#A89B93]">
+                  <p className="font-serif text-xs text-[#6B5E57] italic dark:text-[#A89B93]">
                     El Colibrí & Rosa de Abril
                   </p>
                 </div>
@@ -87,28 +87,11 @@ export const StudioAudioPlayer: React.FC = () => {
               {/* Minimize */}
               <button
                 onClick={() => setPlayerExpanded(false)}
-                className="p-1.5 rounded-full text-[#6B5E57] hover:text-[#2C221E] dark:hover:text-[#F5EFEB] hover:bg-[#EFE9DC] dark:hover:bg-[#1A1614] transition-colors cursor-pointer"
+                className="cursor-pointer rounded-full p-1.5 text-[#6B5E57] transition-colors hover:bg-[#EFE9DC] hover:text-[#2C221E] dark:hover:bg-[#1A1614] dark:hover:text-[#F5EFEB]"
                 aria-label="Minimizar reproductor"
               >
-                <ChevronDown className="w-4 h-4" />
+                <ChevronDown className="h-4 w-4" />
               </button>
-            </div>
-
-            {/* Archival Photo of Cecilia singing with guitar */}
-            <div className="flex items-center gap-3 p-2 rounded-xl bg-[#EFE9DC]/60 dark:bg-[#1A1614]/60 border border-[#2C221E]/8 dark:border-white/5">
-              <img
-                src="/photos/cecilia05.jpg"
-                alt="Cecilia Amighetti con guitarra"
-                className="w-14 h-14 rounded-lg object-cover shrink-0 border border-[#2C221E]/10 dark:border-white/10"
-              />
-              <div className="text-[11px] text-[#6B5E57] dark:text-[#A89B93] leading-snug font-sans-human">
-                <span className="font-semibold text-[#2C221E] dark:text-[#F5EFEB] block">
-                  {language === 'en' ? 'Original Archival Recording' : 'Grabación Original de Archivo'}
-                </span>
-                {language === 'en'
-                  ? 'Cecilia singing with acoustic guitar at a gathering.'
-                  : 'Cecilia cantando con su guitarra acústica en una tertulia íntima.'}
-              </div>
             </div>
 
             {/* Scrub / Progress Bar */}
@@ -119,9 +102,9 @@ export const StudioAudioPlayer: React.FC = () => {
                 max="100"
                 value={progressPercent || 0}
                 onChange={handleSeekChange}
-                className="w-full h-1.5 bg-[#EFE9DC] dark:bg-[#1A1614] rounded-lg appearance-none cursor-pointer accent-[#C86D51]"
+                className="h-1.5 w-full cursor-pointer appearance-none rounded-lg bg-[#EFE9DC] accent-[#C86D51] dark:bg-[#1A1614]"
               />
-              <div className="flex justify-between text-[10px] font-mono text-[#6B5E57] dark:text-[#A89B93]">
+              <div className="flex justify-between font-mono text-[10px] text-[#6B5E57] dark:text-[#A89B93]">
                 <span>{formatTime(currentTime)}</span>
                 <span>{formatTime(duration)}</span>
               </div>
@@ -130,11 +113,11 @@ export const StudioAudioPlayer: React.FC = () => {
             {/* Playback Controls Row */}
             <div className="flex items-center justify-between pt-1">
               {/* Animated Equalizer Wave Bars */}
-              <div className="flex items-end gap-1 h-5 px-1">
+              <div className="flex h-5 items-end gap-1 px-1">
                 {[45, 90, 60, 100, 70].map((h, i) => (
                   <span
                     key={i}
-                    className="w-1 bg-[#C86D51] rounded-full transition-all duration-300"
+                    className="w-1 rounded-full bg-[#C86D51] transition-all duration-300"
                     style={{
                       height: isPlaying ? `${h}%` : '20%',
                       animation: isPlaying
@@ -148,19 +131,23 @@ export const StudioAudioPlayer: React.FC = () => {
               {/* Main Play / Pause Circle */}
               <button
                 onClick={togglePlay}
-                className="w-11 h-11 rounded-full bg-[#C86D51] hover:bg-[#B3593F] text-white flex items-center justify-center shadow-md hover:scale-105 transition-all cursor-pointer"
+                className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-[#C86D51] text-white shadow-md transition-all hover:scale-105 hover:bg-[#B3593F]"
                 aria-label={isPlaying ? 'Pausar audio' : 'Reproducir audio'}
               >
-                {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5 ml-0.5" />}
+                {isPlaying ? <Pause className="h-5 w-5" /> : <Play className="ml-0.5 h-5 w-5" />}
               </button>
 
               {/* Mute Button */}
               <button
                 onClick={toggleMute}
-                className="p-2 rounded-full text-[#6B5E57] hover:text-[#C86D51] transition-colors cursor-pointer"
+                className="cursor-pointer rounded-full p-2 text-[#6B5E57] transition-colors hover:text-[#C86D51]"
                 aria-label={isMuted ? 'Activar sonido' : 'Silenciar sonido'}
               >
-                {isMuted ? <VolumeX className="w-4 h-4 text-red-500" /> : <Volume2 className="w-4 h-4" />}
+                {isMuted ? (
+                  <VolumeX className="h-4 w-4 text-red-500" />
+                ) : (
+                  <Volume2 className="h-4 w-4" />
+                )}
               </button>
             </div>
           </motion.div>
@@ -171,43 +158,34 @@ export const StudioAudioPlayer: React.FC = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
-            whileHover={{ scale: 1.04 }}
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.94 }}
             onClick={() => setPlayerExpanded(true)}
-            className={`flex items-center gap-2.5 px-3.5 py-2 rounded-full shadow-xl border border-[#2C221E]/15 dark:border-white/15 cursor-pointer backdrop-blur-md transition-colors ${
+            className={`relative flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-[#2C221E]/15 shadow-lg backdrop-blur-md transition-colors dark:border-white/15 ${
               isPlaying
                 ? 'bg-[#C86D51] text-white'
-                : 'bg-[#FAF7F0] dark:bg-[#221B18] text-[#2C221E] dark:text-[#F5EFEB]'
+                : 'bg-[#FAF7F0] text-[#2C221E] dark:bg-[#221B18] dark:text-[#F5EFEB]'
             }`}
+            aria-label={
+              language === 'en' ? 'Open the music player' : 'Abrir el reproductor de música'
+            }
+            title={language === 'en' ? 'Open music player' : 'Abrir reproductor de música'}
+            aria-expanded={playerExpanded}
           >
-            {/* Equalizer or Music icon */}
             {isPlaying ? (
-              <div className="flex items-end gap-0.5 h-3.5">
+              <div className="flex h-4 items-end gap-0.5" aria-hidden="true">
                 {[40, 95, 60, 85].map((h, i) => (
                   <span
                     key={i}
-                    className="w-0.5 bg-white rounded-full animate-pulse"
+                    className="w-0.5 animate-pulse rounded-full bg-white"
                     style={{ height: `${h}%`, animationDelay: `${i * 0.15}s` }}
                   />
                 ))}
               </div>
             ) : (
-              <Music className="w-4 h-4 text-[#C86D51]" />
+              <Music className="h-5 w-5 text-[#C86D51]" aria-hidden="true" />
             )}
-
-            <div className="text-left">
-              <span className="text-[11px] font-sans-human font-semibold block leading-tight">
-                {language === 'en' ? 'Cecilia Singing' : 'Canto de Cecilia'}
-              </span>
-              <span
-                className={`text-[9px] uppercase tracking-wider font-mono block ${
-                  isPlaying ? 'text-white/80' : 'text-[#6B5E57] dark:text-[#A89B93]'
-                }`}
-              >
-                {isPlaying ? formatTime(currentTime) : t.audio.offPrompt}
-              </span>
-            </div>
-
-            <ChevronUp className="w-3.5 h-3.5 opacity-70 ml-0.5" />
+            <ChevronUp className="absolute right-0 bottom-0 h-3.5 w-3.5 rounded-full bg-[#FAF7F0] p-0.5 text-[#6B5E57] shadow-sm dark:bg-[#221B18] dark:text-[#A89B93]" />
           </motion.button>
         )}
       </AnimatePresence>

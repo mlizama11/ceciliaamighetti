@@ -15,11 +15,11 @@ export const artworks: Artwork[] = [
       'One of Cecilia Amighetti’s defining masterpieces. On a sun-drenched Costa Rican Pacific beach, a skeletal figure draped in a theatrical scarlet cape and cavalier hat dances hand-in-hand with a golden-haired girl in pink. Rather than fright, the scene radiates joyous intimacy—a tender, magical-realist dialogue embracing life and mortality as companions in rhythm.',
     storyEs:
       'Una de las obras cumbre de Cecilia Amighetti. Sobre una playa dorada del Pacífico costarricense bañada por el sol, una figura esquelética con capa escarlata y sombrero de plumas danza de la mano con una niña de cabellos dorados. Lejos del espanto, la escena destila una calidez lúdica: un diálogo sereno y mágico que concibe la vida y la partida como danzantes del mismo compás.',
-    signedNote: 'Signed: Cecilia Amighetti 1993 (bottom right)',
     orientation: 'landscape',
     ratio: 1.24,
     isHighlight: true,
-    tags: ['Masterpiece', 'Fable', 'Magic Realism', 'Pacific Coast', 'Dance of Life']
+    tagsEn: ['Masterpiece', 'Fable', 'Magic Realism', 'Pacific Coast', 'Dance of Life'],
+    tagsEs: ['Obra maestra', 'Fábula', 'Realismo mágico', 'Costa del Pacífico', 'Danza de la vida']
   },
   {
     id: 'IMG_9375',
@@ -35,11 +35,11 @@ export const artworks: Artwork[] = [
       'An intimate and historic family tribute. Cecilia painted her father—Costa Rica’s monumental printmaker and Benemérito de la Patria, Francisco Amighetti—in 1997, at age 90, just months before his passing. His contemplative brow, silver hair, and piercing, compassionate eyes summarize a century of Costa Rican cultural renaissance.',
     storyEs:
       'Un tesoro histórico y afectivo de incalculable valor. Cecilia retrató a su padre —el célebre maestro del grabado y Benemérito de la Patria, Francisco Amighetti— en 1997, a sus noventa años y poco antes de su partida. Su frente reposada sobre la mano, su cabello de plata y su mirada reflexiva encarnan un siglo de vanguardia y amor por Costa Rica.',
-    signedNote: 'Signed: Cecilia Amighetti 1997 (bottom right)',
     orientation: 'landscape',
     ratio: 1.28,
     isHighlight: true,
-    tags: ['Historical', 'Paco Amighetti', 'Family Heritage', 'Portrait', 'Costa Rican Art']
+    tagsEn: ['Historical', 'Paco Amighetti', 'Family Heritage', 'Portrait', 'Costa Rican Art'],
+    tagsEs: ['Histórico', 'Paco Amighetti', 'Legado familiar', 'Retrato', 'Arte costarricense']
   },
   {
     id: 'IMG_9364',
@@ -55,11 +55,11 @@ export const artworks: Artwork[] = [
       'Cecilia turns her gaze directly upon herself. Her amber eyes look sideways with formidable intellect, candor, and fearless self-awareness. Rendered against deep emerald tones, the painting reveals the unwavering woman who championed women’s reproductive rights and sexual education at the Centro de Orientación Familiar (COF).',
     storyEs:
       'Cecilia se mira a sí misma sin artificios ni concesiones. Sus ojos ambarinos se desvían de soslayo con una agudeza intelectual indomable y honesta. Pintado sobre veladuras de verde bosque, este autorretrato transparenta la fuerza de la mujer y activista que lideró la educación sexual y los derechos femeninos al frente del COF.',
-    signedNote: 'Signed: Cecilia Amighetti (bottom left)',
     orientation: 'portrait',
     ratio: 0.85,
     isHighlight: true,
-    tags: ['Self-Portrait', 'Pioneering Woman', 'Activism', 'Intimate']
+    tagsEn: ['Self-Portrait', 'Pioneering Woman', 'Activism', 'Intimate'],
+    tagsEs: ['Autorretrato', 'Mujer pionera', 'Activismo', 'Íntimo']
   },
   {
     id: 'IMG_9381',
@@ -75,11 +75,11 @@ export const artworks: Artwork[] = [
       'From the iconic "Los Amantes" collection. Two stylized sculptural figures in Prussian blue and white touch hands in a quiet bond, superimposed over real botanical wallpaper. Modernist human silhouettes meet antique domestic intimacy, bridging timeless archetype with everyday memory.',
     storyEs:
       'Perteneciente a la célebre serie «Los Amantes». Dos figuras estilizadas en blanco y azul prusiano enlazan sus manos en un pacto silencioso, pintadas directamente sobre papel tapiz floral antiguo. Una magistral fusión de siluetas modernas con la calidez del hogar y la memoria compartida.',
-    signedNote: 'Signed: Cecilia Amighetti 1990 (bottom right)',
     orientation: 'landscape',
     ratio: 1.27,
     isHighlight: true,
-    tags: ['Los Amantes', 'Collage', 'Mixed Media', 'Wallpaper', 'Modern Love']
+    tagsEn: ['Los Amantes', 'Collage', 'Mixed Media', 'Wallpaper', 'Modern Love'],
+    tagsEs: ['Los amantes', 'Collage', 'Técnica mixta', 'Papel tapiz', 'Amor moderno']
   },
   {
     id: 'IMG_9362',
@@ -98,7 +98,8 @@ export const artworks: Artwork[] = [
     orientation: 'portrait',
     ratio: 0.65,
     isHighlight: true,
-    tags: ['Fable', 'Pilgrimage', 'Childhood', 'Mortality', 'Allegory']
+    tagsEn: ['Fable', 'Pilgrimage', 'Childhood', 'Mortality', 'Allegory'],
+    tagsEs: ['Fábula', 'Peregrinaje', 'Infancia', 'Mortalidad', 'Alegoría']
   },
   {
     id: 'IMG_9355',
@@ -114,11 +115,11 @@ export const artworks: Artwork[] = [
       'Created during her influential sojourn in Mexico, studying at the Academia de San Carlos. Street vendor mangos are carved into radiant yellow rose blossoms on wooden skewers, while an indigenous vendor stands in serene, dignified profile against distant emerald hills.',
     storyEs:
       'Nacida de sus estancias de estudio en la Academia de San Carlos de México. Los mangos callejeros florecen como rosas amarillas talladas en varas de madera, mientras una mujer indígena reposa en sereno perfil frente a lomas verdes que evocan la generosidad de la tierra latinoamericana.',
-    signedNote: 'Signed: Cecilia Amighetti (bottom right)',
     orientation: 'portrait',
     ratio: 0.77,
     isHighlight: true,
-    tags: ['Mexico Series', 'Street Life', 'Tropical Flora', 'San Carlos Academy']
+    tagsEn: ['Mexico Series', 'Street Life', 'Tropical Flora', 'San Carlos Academy'],
+    tagsEs: ['Serie mexicana', 'Vida callejera', 'Flora tropical', 'Academia de San Carlos']
   },
   {
     id: 'IMG_9366',
@@ -137,7 +138,8 @@ export const artworks: Artwork[] = [
     orientation: 'landscape',
     ratio: 1.16,
     isHighlight: true,
-    tags: ['Ocean', 'Movement', 'Nature', 'Freedom', 'Pacific']
+    tagsEn: ['Ocean', 'Movement', 'Nature', 'Freedom', 'Pacific'],
+    tagsEs: ['Océano', 'Movimiento', 'Naturaleza', 'Libertad', 'Pacífico']
   },
   {
     id: 'IMG_9370',
@@ -156,7 +158,8 @@ export const artworks: Artwork[] = [
     orientation: 'landscape',
     ratio: 1.55,
     isHighlight: false,
-    tags: ['Time', 'Clouds', 'Allegory', 'Motion', 'Symbolism']
+    tagsEn: ['Time', 'Clouds', 'Allegory', 'Motion', 'Symbolism'],
+    tagsEs: ['Tiempo', 'Nubes', 'Alegoría', 'Movimiento', 'Simbolismo']
   },
   {
     id: 'IMG_9380',
@@ -172,11 +175,11 @@ export const artworks: Artwork[] = [
       'A magnificent homage to Costa Rica’s protected coastline. Dense rainforest cliffs plunge into sea-green waters, with an offshore jungle island breaking the Pacific surf under drifting tropical cumulus clouds.',
     storyEs:
       'Un sentido homenaje a las costas de Costa Rica. Acantilados cubiertos de selva tropical se sumergen en aguas esmeralda, coronados por un peñón insular que rompe el oleaje del Pacífico bajo nubes airosas.',
-    signedNote: 'Signed: Cecilia Amighetti 93 (bottom left)',
     orientation: 'landscape',
     ratio: 1.55,
     isHighlight: true,
-    tags: ['Costa Rica', 'Manuel Antonio', 'Pacific Landscape', 'Rainforest']
+    tagsEn: ['Costa Rica', 'Manuel Antonio', 'Pacific Landscape', 'Rainforest'],
+    tagsEs: ['Costa Rica', 'Manuel Antonio', 'Paisaje del Pacífico', 'Selva tropical']
   },
   {
     id: 'IMG_9363',
@@ -195,7 +198,8 @@ export const artworks: Artwork[] = [
     orientation: 'portrait',
     ratio: 0.59,
     isHighlight: true,
-    tags: ['Night Sky', 'Dreamscape', 'Cosmos', 'Serenity', 'Moon']
+    tagsEn: ['Night Sky', 'Dreamscape', 'Cosmos', 'Serenity', 'Moon'],
+    tagsEs: ['Cielo nocturno', 'Paisaje onírico', 'Cosmos', 'Serenidad', 'Luna']
   },
   {
     id: 'IMG_9382',
@@ -211,11 +215,11 @@ export const artworks: Artwork[] = [
       'Two statuesque figures curve inward like columns of an ancient sanctuary, enclosing a deep orange setting sun and dark cypress trees upon a twilight horizon.',
     storyEs:
       'Dos figuras estatuarias se inclinan como las columnas de un templo primordial, resguardando entre sus cuerpos un sol poniente anaranjado y cipreses verdes sobre colinas en penumbra.',
-    signedNote: 'Signed: Cecilia Amighetti 1990 (bottom left)',
     orientation: 'portrait',
     ratio: 0.7,
     isHighlight: true,
-    tags: ['Los Amantes', 'Sunset', 'Architectural Form', 'Cypresses']
+    tagsEn: ['Los Amantes', 'Sunset', 'Architectural Form', 'Cypresses'],
+    tagsEs: ['Los amantes', 'Atardecer', 'Forma arquitectónica', 'Cipreses']
   },
   {
     id: 'IMG_9383',
@@ -231,11 +235,11 @@ export const artworks: Artwork[] = [
       'Under a patterned floral blanket, two blue figures embrace in domestic stillness, looking up at a glowing black-and-white television showing sparring boxers. A witty meditation on media, external violence, and private peace.',
     storyEs:
       'Bajo un edredón floreado, dos figuras azules se abrazan en íntima serenidad mientras contemplan un televisor encendido con dos boxeadores en combate. Una mirada perspicaz sobre la ternura privada frente al ruido del mundo.',
-    signedNote: 'Signed: Cecilia Amighetti 1990 (bottom right)',
     orientation: 'portrait',
     ratio: 0.69,
     isHighlight: false,
-    tags: ['Los Amantes', 'Modern Life', 'Television', 'Domesticity']
+    tagsEn: ['Los Amantes', 'Modern Life', 'Television', 'Domesticity'],
+    tagsEs: ['Los amantes', 'Vida moderna', 'Televisión', 'Vida doméstica']
   },
   {
     id: 'IMG_9384',
@@ -251,11 +255,11 @@ export const artworks: Artwork[] = [
       'Seated in a café booth against foliage, a woman presents a crimson apple or pomegranate to her companion. Mythological undertones of temptation and devotion are translated into modern geometric poetry.',
     storyEs:
       'Sentados a la mesa de un café frente a un ventanal vegetal, una mujer ofrece una manzana roja a su acompañante. Reminiscencias míticas de afecto y complicidad plasmadas en siluetas rotundas.',
-    signedNote: 'Signed: Cecilia Amighetti (bottom right)',
     orientation: 'landscape',
     ratio: 1.46,
     isHighlight: false,
-    tags: ['Los Amantes', 'Mythology', 'Cafe Life', 'Modernism']
+    tagsEn: ['Los Amantes', 'Mythology', 'Cafe Life', 'Modernism'],
+    tagsEs: ['Los amantes', 'Mitología', 'Vida de café', 'Modernismo']
   },
   {
     id: 'IMG_9385',
@@ -271,11 +275,11 @@ export const artworks: Artwork[] = [
       'Concentric curves and serpentine embrace: two blue lovers repose upon a golden floor against pastel vertical stripes, their merged anatomy celebrating peaceful sensuality.',
     storyEs:
       'Líneas curvas concéntricas y descanso cómplice: dos amantes azules reposan entrelazados sobre un piso dorado ante rayas verticales que evocan un santuario de sosiego.',
-    signedNote: 'Signed: Cecilia Amighetti 1990 (bottom right)',
     orientation: 'landscape',
     ratio: 1.51,
     isHighlight: false,
-    tags: ['Los Amantes', 'Slumber', 'Sensual Form', 'Harmony']
+    tagsEn: ['Los Amantes', 'Slumber', 'Sensual Form', 'Harmony'],
+    tagsEs: ['Los amantes', 'Sueño', 'Forma sensual', 'Armonía']
   },
   {
     id: 'IMG_9391',
@@ -291,11 +295,11 @@ export const artworks: Artwork[] = [
       'Three blue figures interlace their arms within an integrated wooden frame constructed onto the canvas, breaking the boundary between painted space and physical sculpture.',
     storyEs:
       'Tres figuras azules entrelazan sus brazos en un abrazo fraternal y amoroso dentro de un marco de madera real integrado a la superficie del cuadro, desdibujando la frontera entre pintura y objeto.',
-    signedNote: 'Signed: Cecilia Amighetti 1990 (bottom left)',
     orientation: 'portrait',
     ratio: 0.69,
     isHighlight: true,
-    tags: ['Los Amantes', 'Trompe l’oeil', 'Wood Frame', 'Sculptural']
+    tagsEn: ['Los Amantes', 'Trompe l’oeil', 'Wood Frame', 'Sculptural'],
+    tagsEs: ['Los amantes', 'Trampantojo', 'Marco de madera', 'Escultórico']
   },
   {
     id: 'IMG_9374',
@@ -314,7 +318,8 @@ export const artworks: Artwork[] = [
     orientation: 'portrait',
     ratio: 0.75,
     isHighlight: false,
-    tags: ['Abstraction', 'Los Amantes', 'Organic Form', 'Minimalist']
+    tagsEn: ['Abstraction', 'Los Amantes', 'Organic Form', 'Minimalist'],
+    tagsEs: ['Abstracción', 'Los amantes', 'Forma orgánica', 'Minimalista']
   },
   {
     id: 'IMG_9353',
@@ -330,11 +335,11 @@ export const artworks: Artwork[] = [
       'An indigenous market scene rich in dignity: a woman draped in an embroidered floral rebozo sits beside red clay cooking pots, while a boy in white rests his chin in deep reverie as a cat laps milk from a blue pan.',
     storyEs:
       'Escena de mercado rebosante de dignidad: una mujer envuelta en un rebozo bordado con flores custodia ollas de barro, mientras un niño medita con el rostro en la mano y un gato bebe leche de una vasija azul.',
-    signedNote: 'Signed: Cecilia Amighetti 1988 (bottom left)',
     orientation: 'portrait',
     ratio: 0.84,
     isHighlight: true,
-    tags: ['Gente', 'Clay Pottery', 'Indigenous Culture', 'Market Life']
+    tagsEn: ['Gente', 'Clay Pottery', 'Indigenous Culture', 'Market Life'],
+    tagsEs: ['Gente', 'Alfarería', 'Cultura indígena', 'Vida de mercado']
   },
   {
     id: 'IMG_9354',
@@ -350,11 +355,11 @@ export const artworks: Artwork[] = [
       'A master weaver works with dedicated focus over spools of ochre, cobalt, and crimson thread, honoring the ancestral fiber traditions of Mesoamerica.',
     storyEs:
       'Un maestro artesano se inclina sobre el telar entre carretes de hilo ocre, cobalto y carmín, honrando las tradiciones textiles milenarias de Mesoamérica.',
-    signedNote: 'Signed: Cecilia Amighetti (bottom left)',
     orientation: 'portrait',
     ratio: 0.77,
     isHighlight: false,
-    tags: ['Gente', 'Craftsmanship', 'Textiles', 'Weaver']
+    tagsEn: ['Gente', 'Craftsmanship', 'Textiles', 'Weaver'],
+    tagsEs: ['Gente', 'Artesanía', 'Textiles', 'Tejedor']
   },
   {
     id: 'IMG_9356',
@@ -373,7 +378,8 @@ export const artworks: Artwork[] = [
     orientation: 'portrait',
     ratio: 0.87,
     isHighlight: false,
-    tags: ['Gente', 'Costa Rica', 'Guanacaste', 'Sabanero', 'Horse']
+    tagsEn: ['Gente', 'Costa Rica', 'Guanacaste', 'Sabanero', 'Horse'],
+    tagsEs: ['Gente', 'Costa Rica', 'Guanacaste', 'Sabanero', 'Caballo']
   },
   {
     id: 'IMG_9357',
@@ -389,11 +395,11 @@ export const artworks: Artwork[] = [
       'Musical rhythms of Latin American streets: a mustachioed bassist in a white shirt stands alongside a woman carrying a symbolic embroidered flag.',
     storyEs:
       'La fiesta de la música popular: un contrabajista de mostacho acompaña a una mujer que ondea un estandarte con grafías tradicionales.',
-    signedNote: 'Signed: Cecilia Amighetti 1988 (bottom right)',
     orientation: 'portrait',
     ratio: 0.77,
     isHighlight: false,
-    tags: ['Gente', 'Music', 'Double Bass', 'Celebration']
+    tagsEn: ['Gente', 'Music', 'Double Bass', 'Celebration'],
+    tagsEs: ['Gente', 'Música', 'Contrabajo', 'Celebración']
   },
   {
     id: 'IMG_9358',
@@ -409,11 +415,11 @@ export const artworks: Artwork[] = [
       'An indigenous vendor sits quietly surrounded by kaleidoscopic circular paper windmills and buoyant balloons, capturing everyday beauty elevated into poetic wonder.',
     storyEs:
       'Una vendedora descansa bajo una hilera de remolinos de papel giratorios de vivos círculos concéntricos y globos festivos, transformando el pregón cotidiano en ensueño.',
-    signedNote: 'Signed: Cecilia Amighetti 1988 (bottom left)',
     orientation: 'landscape',
     ratio: 1.3,
     isHighlight: true,
-    tags: ['Gente', 'Pinwheels', 'Market', 'Colors', 'Poetry']
+    tagsEn: ['Gente', 'Pinwheels', 'Market', 'Colors', 'Poetry'],
+    tagsEs: ['Gente', 'Molinillos de viento', 'Mercado', 'Colores', 'Poesía']
   },
   {
     id: 'IMG_9360',
@@ -429,11 +435,11 @@ export const artworks: Artwork[] = [
       'A solitary barefoot girl in a rose tunic stands immersed in diagonal golden rays. The gaze is mature, quiet, and profoundly resilient.',
     storyEs:
       'Una niña descalza con túnica rosada se alza en medio de un torrente de luz dorada. Su expresión serena encierra madurez, silencio y esperanza.',
-    signedNote: 'Signed: Cecilia Amighetti 1997 (bottom right)',
     orientation: 'portrait',
     ratio: 0.72,
     isHighlight: false,
-    tags: ['Retratos', 'Childhood', 'Light', 'Golden Hour']
+    tagsEn: ['Retratos', 'Childhood', 'Light', 'Golden Hour'],
+    tagsEs: ['Retratos', 'Infancia', 'Luz', 'Hora dorada']
   },
   {
     id: 'IMG_9361',
@@ -452,7 +458,8 @@ export const artworks: Artwork[] = [
     orientation: 'portrait',
     ratio: 0.81,
     isHighlight: false,
-    tags: ['Retratos', 'Blue Dress', 'Terracotta', 'Gaze']
+    tagsEn: ['Retratos', 'Blue Dress', 'Terracotta', 'Gaze'],
+    tagsEs: ['Retratos', 'Vestido azul', 'Terracota', 'Mirada']
   },
   {
     id: 'IMG_9365',
@@ -468,11 +475,11 @@ export const artworks: Artwork[] = [
       'Signed at the dawn of the year 2000, this portrait captures a woman of quiet fortitude and dignity against a brushed ocean blue atmosphere.',
     storyEs:
       'Pintado en el año 2000, este retrato capta a una mujer de serena fortaleza y dignidad sobre un fondo azul oceánico con pinceladas enérgicas.',
-    signedNote: 'Signed: Cecilia Amighetti 2000 (bottom right)',
     orientation: 'portrait',
     ratio: 0.67,
     isHighlight: false,
-    tags: ['Retratos', 'Millennium', 'Elegance', 'Dignity']
+    tagsEn: ['Retratos', 'Millennium', 'Elegance', 'Dignity'],
+    tagsEs: ['Retratos', 'Nuevo milenio', 'Elegancia', 'Dignidad']
   },
   {
     id: 'IMG_9368',
@@ -491,7 +498,8 @@ export const artworks: Artwork[] = [
     orientation: 'landscape',
     ratio: 1.3,
     isHighlight: true,
-    tags: ['Fabulas', 'Memorial', 'Vigil', 'Tradition', 'Respect']
+    tagsEn: ['Fabulas', 'Memorial', 'Vigil', 'Tradition', 'Respect'],
+    tagsEs: ['Fábulas', 'Memorial', 'Vigilia', 'Tradición', 'Respeto']
   },
   {
     id: 'IMG_9369',
@@ -510,7 +518,8 @@ export const artworks: Artwork[] = [
     orientation: 'landscape',
     ratio: 1.32,
     isHighlight: false,
-    tags: ['Fabulas', 'Solitude', 'Memory', 'Vigil', 'Love Beyond Life']
+    tagsEn: ['Fabulas', 'Solitude', 'Memory', 'Vigil', 'Love Beyond Life'],
+    tagsEs: ['Fábulas', 'Soledad', 'Memoria', 'Vigilia', 'Amor más allá de la vida']
   },
   {
     id: 'IMG_9372',
@@ -529,7 +538,8 @@ export const artworks: Artwork[] = [
     orientation: 'portrait',
     ratio: 0.65,
     isHighlight: false,
-    tags: ['Fabulas', 'Angel', 'Pendulum', 'Time', 'Eternity']
+    tagsEn: ['Fabulas', 'Angel', 'Pendulum', 'Time', 'Eternity'],
+    tagsEs: ['Fábulas', 'Ángel', 'Péndulo', 'Tiempo', 'Eternidad']
   },
   {
     id: 'IMG_9373',
@@ -545,11 +555,11 @@ export const artworks: Artwork[] = [
       'Luscious tropical produce rendered in warm earthen light: a fragrant pineapple, a sliced melon, and citrus fruit resting on an unvarnished wooden studio table.',
     storyEs:
       'Abundancia frutal de la tierra centroamericana: una piña aromática, un melón abierto en gajo y limas doradas sobre una mesa de madera rústica.',
-    signedNote: 'Signed: Cecilia Amighetti 1991 (bottom right)',
     orientation: 'landscape',
     ratio: 1.53,
     isHighlight: true,
-    tags: ['Bodegones', 'Tropical Fruit', 'Pineapple', 'Color Harmony']
+    tagsEn: ['Bodegones', 'Tropical Fruit', 'Pineapple', 'Color Harmony'],
+    tagsEs: ['Bodegones', 'Fruta tropical', 'Piña', 'Armonía de color']
   },
   {
     id: 'IMG_9376',
@@ -568,7 +578,8 @@ export const artworks: Artwork[] = [
     orientation: 'portrait',
     ratio: 0.65,
     isHighlight: true,
-    tags: ['Fabulas', 'Surrealism', 'Satire', 'Ecological Critique']
+    tagsEn: ['Fabulas', 'Surrealism', 'Satire', 'Ecological Critique'],
+    tagsEs: ['Fábulas', 'Surrealismo', 'Sátira', 'Crítica ecológica']
   },
   {
     id: 'IMG_9378',
@@ -587,7 +598,8 @@ export const artworks: Artwork[] = [
     orientation: 'portrait',
     ratio: 0.75,
     isHighlight: false,
-    tags: ['Figure Study', 'Earth Mother', 'Fertility', 'Green']
+    tagsEn: ['Figure Study', 'Earth Mother', 'Fertility', 'Green'],
+    tagsEs: ['Estudio de figura', 'Madre Tierra', 'Fertilidad', 'Verde']
   },
   {
     id: 'IMG_9379',
@@ -606,7 +618,8 @@ export const artworks: Artwork[] = [
     orientation: 'portrait',
     ratio: 0.75,
     isHighlight: false,
-    tags: ['Figure Study', 'Anatomy', 'Terracotta', 'Academic Form']
+    tagsEn: ['Figure Study', 'Anatomy', 'Terracotta', 'Academic Form'],
+    tagsEs: ['Estudio de figura', 'Anatomía', 'Terracota', 'Forma académica']
   },
   {
     id: 'IMG_9386',
@@ -625,7 +638,8 @@ export const artworks: Artwork[] = [
     orientation: 'landscape',
     ratio: 1.35,
     isHighlight: false,
-    tags: ['Paisajes', 'Central Valley', 'Canopy Trees', 'Rest']
+    tagsEn: ['Paisajes', 'Central Valley', 'Canopy Trees', 'Rest'],
+    tagsEs: ['Paisajes', 'Valle Central', 'Árboles de sombra', 'Descanso']
   },
   {
     id: 'IMG_9387',
@@ -641,11 +655,11 @@ export const artworks: Artwork[] = [
       'Traditional whitewashed and ochre adobe houses with ancient clay tile roofs lining a steep mountain town street in Costa Rica, framed by tree branches above.',
     storyEs:
       'Viviendas tradicionales de adobe y bahareque pintadas de ocre y azul con tejados de barro en una calle empinada de pueblo, bajo ramajes verdes.',
-    signedNote: 'Signed: C. AMIGHETTI (bottom left)',
     orientation: 'landscape',
     ratio: 1.31,
     isHighlight: true,
-    tags: ['Paisajes', 'Colonial Architecture', 'Adobe', 'Town']
+    tagsEn: ['Paisajes', 'Colonial Architecture', 'Adobe', 'Town'],
+    tagsEs: ['Paisajes', 'Arquitectura colonial', 'Adobe', 'Pueblo']
   },
   {
     id: 'IMG_9388',
@@ -664,7 +678,8 @@ export const artworks: Artwork[] = [
     orientation: 'landscape',
     ratio: 1.32,
     isHighlight: false,
-    tags: ['Paisajes', 'Riverbank', 'Rainforest', 'Raw Canvas']
+    tagsEn: ['Paisajes', 'Riverbank', 'Rainforest', 'Raw Canvas'],
+    tagsEs: ['Paisajes', 'Ribera', 'Selva tropical', 'Lienzo crudo']
   },
   {
     id: 'IMG_9389',
@@ -680,11 +695,11 @@ export const artworks: Artwork[] = [
       'A winding village lane with vibrant blue painted shutters and doors opening toward the towering green mountain peaks of Escazú or Heredia.',
     storyEs:
       'Callejuela tradicional con portones de azul añil que se abre hacia los cerros verdes tutelares del valle.',
-    signedNote: 'Signed: C. AMIGHETTI (bottom right)',
     orientation: 'portrait',
     ratio: 0.78,
     isHighlight: false,
-    tags: ['Paisajes', 'Cobalt Doors', 'Mountain View', 'Architecture']
+    tagsEn: ['Paisajes', 'Cobalt Doors', 'Mountain View', 'Architecture'],
+    tagsEs: ['Paisajes', 'Puertas de azul cobalto', 'Vista a la montaña', 'Arquitectura']
   },
   {
     id: 'IMG_9390',
@@ -700,10 +715,10 @@ export const artworks: Artwork[] = [
       'An early, formative still life signed "Prieto" in tribute to her mother Emilia Prieto’s lineage. Ceramic pottery, a glass of water, and ripe fruit glow on a rustic red-and-white checkered cloth.',
     storyEs:
       'Bodegón temprano firmado con el apellido materno «Prieto» en homenaje a su madre Emilia Prieto. Cerámica rústica, vaso y frutas reposando sobre un mantel de cuadros rojos.',
-    signedNote: 'Signed: Prieto (bottom left)',
     orientation: 'square',
     ratio: 1.09,
     isHighlight: false,
-    tags: ['Bodegones', 'Emilia Prieto Heritage', 'Early Works', 'Clay Jug']
+    tagsEn: ['Bodegones', 'Emilia Prieto Heritage', 'Early Works', 'Clay Jug'],
+    tagsEs: ['Bodegones', 'Legado de Emilia Prieto', 'Obras tempranas', 'Jarra de barro']
   }
 ];
