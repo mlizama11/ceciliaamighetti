@@ -65,7 +65,7 @@ export const HeroTribute: React.FC<HeroTributeProps> = ({ onOpenArtworkModal }) 
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: 'easeOut' }}
-              className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-[#2C221E]/10 bg-[#EFE9DC] px-3.5 py-1 text-[11px] font-semibold tracking-widest text-[#C86D51] uppercase shadow-xs dark:border-white/10 dark:bg-[#241E1B] dark:text-[#EDB45D]"
+              className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-[#2C221E]/10 bg-[#EFE9DC] px-3.5 py-1 text-[11px] font-semibold tracking-widest text-[#9B4A35] uppercase shadow-xs dark:border-white/10 dark:bg-[#241E1B] dark:text-[#EDB45D]"
             >
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#C86D51]" />
               <span>{t.hero.birthPassing}</span>
@@ -153,7 +153,7 @@ export const HeroTribute: React.FC<HeroTributeProps> = ({ onOpenArtworkModal }) 
                 {/* Image container with subtle canvas texture */}
                 <div className="relative flex aspect-[1.24/1] items-center justify-center overflow-hidden rounded-lg bg-[#EFE9DC] dark:bg-[#1A1614]">
                   <img
-                    src="/artworks/IMG_9367.jpg"
+                    src="/artworks/IMG_9367-preview.webp"
                     alt={t.hero.featuredPaintingTitle}
                     fetchPriority="high"
                     className="h-full w-full object-contain transition-transform duration-700 ease-out group-hover:scale-105"
@@ -189,13 +189,13 @@ export const HeroTribute: React.FC<HeroTributeProps> = ({ onOpenArtworkModal }) 
                         ? 'Oil on canvas · 98 × 122 cm'
                         : 'Óleo sobre lienzo · 98 × 122 cm'}
                     </span>
-                    <span className="mt-1 block font-serif text-[11px] text-[#C86D51] italic dark:text-[#EDB45D]">
+                    <span className="mt-1 block font-serif text-[11px] text-[#9B4A35] italic dark:text-[#EDB45D]">
                       {language === 'en'
                         ? 'Inspired by her childhood classical ballet studies (c. 1942)'
                         : 'Inspirada en su vivencia infantil del ballet clásico (c. 1942)'}
                     </span>
                   </div>
-                  <span className="font-mono text-[10px] tracking-widest text-[#C86D51] uppercase dark:text-[#EDB45D]">
+                  <span className="font-mono text-[10px] tracking-widest text-[#9B4A35] uppercase dark:text-[#EDB45D]">
                     {t.hero.featuredPaintingTag}
                   </span>
                 </div>

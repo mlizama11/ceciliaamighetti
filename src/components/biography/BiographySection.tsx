@@ -22,7 +22,7 @@ export const BiographySection: React.FC<BiographySectionProps> = ({ onOpenArtwor
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
         {/* Section Header */}
         <div className="mx-auto mb-16 max-w-3xl text-center sm:mb-20">
-          <div className="mb-3 inline-flex items-center gap-2 text-xs font-semibold tracking-widest text-[#C86D51] uppercase">
+          <div className="mb-3 inline-flex items-center gap-2 text-xs font-semibold tracking-widest text-[#9B4A35] uppercase dark:text-[#EDB45D]">
             <Sparkles className="h-3.5 w-3.5" />
             <span>{t.bio.tag}</span>
           </div>
@@ -67,7 +67,7 @@ export const BiographySection: React.FC<BiographySectionProps> = ({ onOpenArtwor
               >
                 <div className="aspect-[0.85/1] overflow-hidden rounded-lg bg-[#EFE9DC] dark:bg-[#1A1614]">
                   <img
-                    src="/artworks/IMG_9364.jpg"
+                    src="/artworks/IMG_9364-preview.webp"
                     alt="Autorretrato de Cecilia Amighetti"
                     loading="lazy"
                     className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-105"
@@ -119,7 +119,7 @@ export const BiographySection: React.FC<BiographySectionProps> = ({ onOpenArtwor
               {/* Archival Photo Callout: Folkloric Roots */}
               <div className="mt-4 flex items-center gap-3.5 rounded-xl border border-[#2C221E]/10 bg-[#EFE9DC]/60 p-3.5 dark:border-white/10 dark:bg-[#251E1A]">
                 <img
-                  src="/photos/cecilia09.jpg"
+                  src="/photos/cecilia09-preview.webp"
                   alt="Cecilia con traje típico"
                   className="h-22 w-16 shrink-0 rounded-lg border border-[#2C221E]/10 object-cover shadow-xs dark:border-white/10"
                 />
@@ -172,7 +172,7 @@ export const BiographySection: React.FC<BiographySectionProps> = ({ onOpenArtwor
               {/* Archival Photo Callout: Sculpting in the atelier */}
               <div className="mt-4 flex items-center gap-3.5 rounded-xl border border-[#2C221E]/10 bg-[#EFE9DC]/60 p-3.5 dark:border-white/10 dark:bg-[#251E1A]">
                 <img
-                  src="/photos/cecilia16.jpg"
+                  src="/photos/cecilia16-preview.webp"
                   alt="Cecilia modelando en el taller de escultura"
                   className="h-22 w-16 shrink-0 rounded-lg border border-[#2C221E]/10 object-cover shadow-xs dark:border-white/10"
                 />
@@ -243,7 +243,7 @@ export const BiographySection: React.FC<BiographySectionProps> = ({ onOpenArtwor
               >
                 <div className="aspect-[0.77/1] overflow-hidden rounded-lg bg-[#EFE9DC] dark:bg-[#1A1614]">
                   <img
-                    src="/artworks/IMG_9355.jpg"
+                    src="/artworks/IMG_9355-preview.webp"
                     alt="Vendedora de mangos floridos"
                     loading="lazy"
                     className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-105"
@@ -305,7 +305,7 @@ export const BiographySection: React.FC<BiographySectionProps> = ({ onOpenArtwor
               {/* Archival Photo Callout: Latin American Education Summit */}
               <div className="flex items-center gap-3.5 rounded-xl border border-[#2C221E]/10 bg-[#EFE9DC]/60 p-3.5 dark:border-white/10 dark:bg-[#251E1A]">
                 <img
-                  src="/photos/cecilia04.jpg"
+                  src="/photos/cecilia04-preview.webp"
                   alt="Reunión Latinoamericana y del Caribe sobre Educación"
                   className="h-16 w-20 shrink-0 rounded-lg border border-[#2C221E]/10 object-cover shadow-xs dark:border-white/10"
                 />

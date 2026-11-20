@@ -107,7 +107,7 @@ export const ArchivalPhotosSection: React.FC = () => {
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
         {/* Section Header */}
         <div className="mx-auto mb-14 max-w-3xl text-center">
-          <div className="mb-3 inline-flex items-center gap-2 text-xs font-semibold tracking-widest text-[#C86D51] uppercase">
+          <div className="mb-3 inline-flex items-center gap-2 text-xs font-semibold tracking-widest text-[#9B4A35] uppercase dark:text-[#EDB45D]">
             <Camera className="h-3.5 w-3.5" />
             <span>
               {t.photos?.tag ||
@@ -195,7 +195,7 @@ export const ArchivalPhotosSection: React.FC = () => {
                 <div>
                   <div className="relative aspect-4/5 overflow-hidden rounded-lg bg-[#EFE9DC] dark:bg-[#1A1614]">
                     <img
-                      src={photo.image}
+                      src={photo.imagePreview ?? photo.image}
                       alt={title}
                       loading="lazy"
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"

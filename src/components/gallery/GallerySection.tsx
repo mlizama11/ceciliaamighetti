@@ -114,7 +114,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectArtwork 
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
         {/* Section Header */}
         <div className="mx-auto mb-14 max-w-3xl text-center">
-          <div className="mb-3 inline-flex items-center gap-2 text-xs font-semibold tracking-widest text-[#C86D51] uppercase">
+          <div className="mb-3 inline-flex items-center gap-2 text-xs font-semibold tracking-widest text-[#9B4A35] uppercase dark:text-[#EDB45D]">
             <Sparkles className="h-3.5 w-3.5" />
             <span>{t.gallery.tag}</span>
           </div>
@@ -281,7 +281,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectArtwork 
                       {/* Canvas Surface with golden-hour glow on hover */}
                       <div className="relative flex aspect-4/3 w-full items-center justify-center overflow-hidden rounded-lg bg-[#EAE4D7] p-2 dark:bg-[#161211]">
                         <img
-                          src={`/artworks/${item.image}`}
+                          src={`/artworks/${item.imagePreview ?? item.image}`}
                           alt={title}
                           loading="lazy"
                           className="h-full w-full object-contain transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"

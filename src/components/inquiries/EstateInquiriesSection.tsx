@@ -86,7 +86,7 @@ export const EstateInquiriesSection: React.FC<EstateInquiriesProps> = ({
       <div className="relative z-10 mx-auto max-w-4xl px-5 sm:px-8">
         {/* Section Header */}
         <div className="mx-auto mb-16 max-w-3xl text-center">
-          <div className="mb-3 inline-flex items-center gap-2 text-xs font-semibold tracking-widest text-[#C86D51] uppercase">
+          <div className="mb-3 inline-flex items-center gap-2 text-xs font-semibold tracking-widest text-[#9B4A35] uppercase dark:text-[#EDB45D]">
             <Mail className="h-4 w-4" />
             <span>{t.inquiries.tag}</span>
           </div>
@@ -148,7 +148,7 @@ export const EstateInquiriesSection: React.FC<EstateInquiriesProps> = ({
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
             <a
               href={mailtoHref}
-              className="font-sans-human group flex cursor-pointer items-center gap-2 rounded-full bg-[#C86D51] px-8 py-3.5 text-xs font-semibold tracking-wider text-white uppercase shadow-md transition-all hover:bg-[#B3593F] hover:shadow-lg"
+              className="font-sans-human group flex cursor-pointer items-center gap-2 rounded-full bg-[#A14F39] px-8 py-3.5 text-xs font-semibold tracking-wider text-white uppercase shadow-md transition-all hover:bg-[#8F422E] hover:shadow-lg"
             >
               <span>{t.inquiries.sendEmail}</span>
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

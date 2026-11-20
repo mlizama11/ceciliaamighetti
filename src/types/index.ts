@@ -6,6 +6,7 @@ export type ArtworkSeries =
 export interface Artwork {
   id: string;
   image: string;
+  imagePreview?: string;
   titleEn: string;
   titleEs: string;
   year: string;

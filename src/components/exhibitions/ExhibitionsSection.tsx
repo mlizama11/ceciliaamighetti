@@ -15,7 +15,7 @@ export const ExhibitionsSection: React.FC = () => {
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
         {/* Section Header */}
         <div className="mx-auto mb-16 max-w-3xl text-center sm:mb-20">
-          <div className="mb-3 inline-flex items-center gap-2 text-xs font-semibold tracking-widest text-[#C86D51] uppercase">
+          <div className="mb-3 inline-flex items-center gap-2 text-xs font-semibold tracking-widest text-[#9B4A35] uppercase dark:text-[#EDB45D]">
             <Sparkles className="h-3.5 w-3.5" />
             <span>{t.exhibitions.tag}</span>
           </div>

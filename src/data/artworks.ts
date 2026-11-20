@@ -4,6 +4,7 @@ export const artworks: Artwork[] = [
   {
     id: 'IMG_9367',
     image: 'IMG_9367.jpg',
+    imagePreview: 'IMG_9367-preview.webp',
     titleEn: 'Girl Dancing with Death',
     titleEs: 'Niña bailando con la muerte',
     year: '1993',
@@ -24,6 +25,7 @@ export const artworks: Artwork[] = [
   {
     id: 'IMG_9375',
     image: 'IMG_9375.jpg',
+    imagePreview: 'IMG_9375-preview.webp',
     titleEn: 'Portrait of Don Francisco "Paco" Amighetti',
     titleEs: 'Retrato de Don Francisco "Paco" Amighetti',
     year: '1997',
@@ -44,6 +46,7 @@ export const artworks: Artwork[] = [
   {
     id: 'IMG_9364',
     image: 'IMG_9364.jpg',
+    imagePreview: 'IMG_9364-preview.webp',
     titleEn: 'Self-Portrait with Inquiring Gaze',
     titleEs: 'Autorretrato con mirada inquisitiva',
     year: 'c. 1978',
@@ -64,6 +67,7 @@ export const artworks: Artwork[] = [
   {
     id: 'IMG_9381',
     image: 'IMG_9381.jpg',
+    imagePreview: 'IMG_9381-preview.webp',
     titleEn: 'The Feast (The Lovers Series)',
     titleEs: 'La fiesta (Serie Los amantes)',
     year: '1990',
@@ -104,6 +108,7 @@ export const artworks: Artwork[] = [
   {
     id: 'IMG_9355',
     image: 'IMG_9355.jpg',
+    imagePreview: 'IMG_9355-preview.webp',
     titleEn: 'Mango Blossom Vendor (People of Mexico)',
     titleEs: 'Vendedora de mangos floridos (Gente de México)',
     year: '1988',

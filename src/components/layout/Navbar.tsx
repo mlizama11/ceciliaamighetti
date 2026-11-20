@@ -89,7 +89,15 @@ export const Navbar: React.FC = () => {
                     ? 'Listen to Cecilia singing (El Colibrí / Rosa de Abril)'
                     : 'Escuchar a Cecilia cantar (El Colibrí / Rosa de Abril)'
               }
-              aria-label="Reproducir voz de Cecilia Amighetti"
+              aria-label={
+                language === 'en'
+                  ? `${isPlaying ? 'Pause' : 'Play'} ${
+                      isPlaying ? 'Playing Voice' : 'Cecilia Singing'
+                    }`
+                  : `${isPlaying ? 'Pausar' : 'Reproducir'} ${
+                      isPlaying ? 'Sonando' : 'Canto de Cecilia'
+                    }`
+              }
             >
               {isPlaying ? (
                 <div className="flex h-3 items-end gap-0.5">
@@ -119,7 +127,9 @@ export const Navbar: React.FC = () => {
             <button
               onClick={toggleLanguage}
               className="relative flex cursor-pointer items-center gap-1.5 rounded-full border border-[#2C221E]/15 bg-[#FAF7F0]/60 px-2.5 py-1.5 text-xs font-semibold tracking-wider text-nowrap text-[#2C221E] shadow-xs transition-all duration-200 hover:border-[#C86D51] sm:px-3 dark:border-white/15 dark:bg-[#241E1B]/80 dark:text-[#F5EFEB]"
-              aria-label={`Cambiar a ${language === 'en' ? 'Español' : 'English'}`}
+              aria-label={`${
+                language === 'en' ? 'EN / ES' : 'ES / EN'
+              } — Cambiar a ${language === 'en' ? 'Español' : 'English'}`}
             >
               <Globe className="h-3.5 w-3.5 text-[#C86D51]" />
               <div className="relative flex h-4 w-7 items-center justify-center overflow-hidden">

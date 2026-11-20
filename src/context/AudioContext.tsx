@@ -28,8 +28,8 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const [playerExpanded, setPlayerExpanded] = useState(false);
 
   useEffect(() => {
-    const audio = new Audio('/audio/cecilia-amighetti-canto.mp3');
-    audio.preload = 'metadata';
+    const audio = new Audio();
+    audio.preload = 'none';
     audioRef.current = audio;
 
     const handleLoadedMetadata = () => {
@@ -63,6 +63,9 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       audioRef.current.pause();
       setIsPlaying(false);
     } else {
+      if (!audioRef.current.hasAttribute('src')) {
+        audioRef.current.src = '/audio/cecilia-amighetti-canto.mp3';
+      }
       audioRef.current
         .play()
         .then(() => {
@@ -77,6 +80,9 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   const play = () => {
     if (!audioRef.current) return;
+    if (!audioRef.current.hasAttribute('src')) {
+      audioRef.current.src = '/audio/cecilia-amighetti-canto.mp3';
+    }
     audioRef.current
       .play()
       .then(() => {

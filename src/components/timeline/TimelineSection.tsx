@@ -20,7 +20,7 @@ export const TimelineSection: React.FC<TimelineSectionProps> = ({ onOpenArtworkM
       <div className="relative z-10 mx-auto max-w-6xl px-5 sm:px-8">
         {/* Section Header */}
         <div className="mx-auto mb-20 max-w-3xl text-center">
-          <div className="mb-3 inline-flex items-center gap-2 text-xs font-semibold tracking-widest text-[#C86D51] uppercase">
+          <div className="mb-3 inline-flex items-center gap-2 text-xs font-semibold tracking-widest text-[#9B4A35] uppercase dark:text-[#EDB45D]">
             <Sparkles className="h-3.5 w-3.5" />
             <span>{t.timeline.tag}</span>
           </div>
@@ -126,7 +126,7 @@ export const TimelineSection: React.FC<TimelineSectionProps> = ({ onOpenArtworkM
                           }`}
                         >
                           <img
-                            src={`/artworks/${linkedArtwork.image}`}
+                            src={`/artworks/${linkedArtwork.imagePreview ?? linkedArtwork.image}`}
                             alt={language === 'en' ? linkedArtwork.titleEn : linkedArtwork.titleEs}
                             className="h-12 w-12 rounded border border-[#2C221E]/10 object-cover shadow-xs"
                           />

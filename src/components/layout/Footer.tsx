@@ -30,7 +30,7 @@ export const Footer: React.FC = () => {
             <p className="font-sans-human max-w-lg text-xs leading-relaxed text-[#A89B93]">
               {t.footer.estateNote}
             </p>
-            <p className="pt-2 font-mono text-xs tracking-wider text-[#C86D51]">
+            <p className="pt-2 font-mono text-xs tracking-wider text-[#EDB45D]">
               {t.footer.familySignoff}
             </p>
           </div>

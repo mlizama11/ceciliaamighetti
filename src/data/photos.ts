@@ -1,6 +1,7 @@
 export interface ArchivalPhoto {
   id: string;
   image: string;
+  imagePreview?: string;
   titleEn: string;
   titleEs: string;
   year: string;
@@ -29,6 +30,7 @@ export const archivalPhotos: ArchivalPhoto[] = [
   {
     id: 'photo-16',
     image: '/photos/cecilia16.jpg',
+    imagePreview: '/photos/cecilia16-preview.webp',
     titleEn: 'Sculpting in the Atelier (Fine Arts Academy)',
     titleEs: 'Modelando en el taller de escultura',
     year: 'c. 1954',
@@ -85,6 +87,7 @@ export const archivalPhotos: ArchivalPhoto[] = [
   {
     id: 'photo-09',
     image: '/photos/cecilia09.jpg',
+    imagePreview: '/photos/cecilia09-preview.webp',
     titleEn: 'Costa Rican Folkloric White Gown',
     titleEs: 'Traje típico y corona de rosas',
     year: 'c. 1946',
@@ -124,6 +127,7 @@ export const archivalPhotos: ArchivalPhoto[] = [
   {
     id: 'photo-04',
     image: '/photos/cecilia04.jpg',
+    imagePreview: '/photos/cecilia04-preview.webp',
     titleEn: 'Latin American Higher Education Summit',
     titleEs: 'Reunión Latinoamericana de Educación Post-Secundaria',
     year: 'c. 1976',
